@@ -29,11 +29,6 @@ body {
     background-color: #F9FAFC;
 }
 
-.card {
-    border: none;
-    background-color: transparent;
-}
-
 .image-container {
     position: relative;
 }
