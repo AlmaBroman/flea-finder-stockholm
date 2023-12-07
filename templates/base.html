@@ -5,12 +5,8 @@
 
 <head>
     <title>Flea Finder Stockholm</title>
-    <link rel="favicon" href="{static 'media/favicon/favicon.ico'}">
+    <link rel="icon" type="image/x-icon" href="{%static 'media/favicon/favicon.ico'%}">
     
-    <!-- Google Fonts-->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
     <!-- Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Bootstrap -->
@@ -31,8 +27,13 @@
 
     <!-- Navigation -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <span class="brand">
+                    <img src="{% static 'media/images/ffs-logo2-dark.png' %}" alt="logo">
+                </span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -54,12 +55,7 @@
                         <a class="nav-link" aria-current="page" href="#">Contact</a>
                     </li>
                 </ul>
-                <a class="navbar-brand" href="{% url 'home' %}">
-                    <span class="brand">
-                        <img src="{% static 'media/images/ffs-logo-b.jpg' %}" alt="logo">
-                    </span>
-                </a>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav mb-2 mb-lg-0">
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="#">Logout</a>
@@ -84,8 +80,8 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center text-white">Made by Alma Brmn</p>
+    <footer class="footer mt-auto py-3 bg-dark">
+        <p class="m-0 text-center text-white">Made by Alma</p>
     </footer>
 </body>
 
