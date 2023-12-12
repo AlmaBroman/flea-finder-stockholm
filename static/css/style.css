@@ -8,7 +8,7 @@
 }
 
 .card-body {
-    border: none;
+    border: solid;
     background-color: white;
 }
 
@@ -47,4 +47,13 @@
 
 p {
     margin-bottom: 0px;
+}
+
+.post-body {
+    position: relative;
+}
+
+.card-likes {
+    position: absolute;
+    right: 0px;
 }
