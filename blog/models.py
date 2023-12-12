@@ -10,7 +10,7 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     description = models.TextField()
     event_start = models.DateTimeField()
-    event_end = models.DateTimeField()
+    event_end = models.TimeField()
     adress = models.CharField('adress', max_length=1024)
     map_link = models.URLField(max_length=200)
     featured_image = CloudinaryField('image', default='placeholder')

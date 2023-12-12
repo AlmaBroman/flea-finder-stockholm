@@ -6,3 +6,45 @@
 .brand img {
     max-width: 40px;
 }
+
+.card-body {
+    border: none;
+    background-color: white;
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-flash-date {
+    position: absolute;
+    top: 5%;
+    min-width: 18%;
+    right: -2px;
+    padding-right: 5px;
+    background-color: rgba(255, 255, 255, 0.8)
+}
+
+.image-flash-title {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    bottom: 0px;
+    color: white;
+    width: 100%;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.date {
+    color: black;
+    margin: 4px;
+}
+
+.post-link {
+    text-decoration: none;
+    color: black;
+}
+
+p {
+    margin-bottom: 0px;
+}
