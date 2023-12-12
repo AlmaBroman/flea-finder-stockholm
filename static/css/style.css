@@ -8,8 +8,9 @@
 }
 
 .card-body {
-    border: solid;
+    border: solid #bebebe;
     background-color: white;
+    padding: 0;
 }
 
 .image-container {
@@ -51,9 +52,10 @@ p {
 
 .post-body {
     position: relative;
+    padding: 5px;
 }
 
 .card-likes {
     position: absolute;
-    right: 0px;
+    right: 5px;
 }
