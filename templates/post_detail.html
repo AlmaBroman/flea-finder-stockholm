@@ -1,0 +1,66 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 mt-3">
+            <div>
+                {% if "placeholder" in post.featured_image.url %}
+                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%"
+                    class="featured-image">
+                {% else %}
+                <img src=" {{ post.featured_image.url }}" width="100%" class="featured-image">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-11">
+            <h2 class="post-title">{{ post.title }}</h2>
+        </div>
+        <div class="col-1 pd-likes">
+            <!-- The number of likes goes before the closing strong tag -->
+            <p class=""><strong class="text-secondary"><i class="far fa-heart"></i> {{ post.number_of_likes }} </strong></p>
+        </div>
+        <div class="col-12 mt-3">
+            <p><strong>Date: </strong>{{ post.event_start|date:"j F Y" }}</p>
+            <p><strong>Time: </strong>{{ post.event_start|date:"P" }} - {{ post.event_end|date:"P" }}</p>
+            <p><strong>Location: </strong>{{ post.adress }}</p>
+            <p class="mt-3">{{ post.description | safe }}</p>
+        </div>
+    </div>
+</div>
+<div class="row mt-5">
+    <hr>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-8 card mb-4  mt-3 pd-card">
+            <h3>Comments:</h3>
+            <div class="card-body">
+                <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
+                {% for comment in comments %}
+                <div class="comments" style="padding: 10px;">
+                    <p class="font-weight-bold">
+                        <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
+                        {{ comment.name }}
+                        <span class=" text-muted font-weight-normal">
+                            <!-- The comment's created date goes here -->
+                            {{ comment.created_on }}
+                        </span> wrote:
+                    </p>
+                    <!-- The body of the comment goes before the | -->
+                    {{ comment.body | linebreaks }}
+                </div>
+                <!-- Our for loop ends here -->
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-4 card mb-4  mt-3 pd-card">
+            <div class="card-body">
+                <!-- For later -->
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -11,8 +11,7 @@
                 {% for post in post_list %}
                 <div class="col-md-4">
                     <div class="card-mb-4">
-                        <div class="card-body">
-                            <a href="#" class="post-link">
+                        <div class="card-body pl-card">
                                 <div class="image-container">
                                     {% if "placeholder" in post.featured_image.url %}
                                     <img class="card-img-top"
@@ -20,20 +19,25 @@
                                     {% else %}
                                     <img class="card-img-top" src="{{ post.featured_image.url }}">
                                     {% endif %}
-                                    <div class="image-flash-date">
-                                        <p class="date">{{ post.event_start|date:"j M" }}</p>
+                                    <div class="flash-date">
+                                        <p class="pl-date">{{ post.event_start|date:"j M" }}</p>
                                     </div>
-                                    <div class="image-flash-title">
+                                    <div class="flash-title">
                                         <h5 class="card-title">{{ post.title }}</h5>
                                     </div>
                                 </div>
-                                <div class="post-body">
+                                <div class="post-body pl-card-body">
                                     <p class="card-text">{{ post.adress }}</p>
                                     <p class="card-text">{{ post.event_start|date:"P" }} - {{ post.event_end|date:"P" }}
                                     </p>
                                     <p class="card-text">{{ post.event_start|date:"j F" }}</p>
-                                    <p class="card-likes">{{ post.number_of_likes }} <i class="far fa-heart"></i></p>
-                                    <a href="#">Read more</a>
+                                    <p class="pl-likes">{{ post.number_of_likes }} <i class="far fa-heart"></i>
+                                        {% with comments.count as total_comments %}
+                                        <strong class="text-secondary"><i class="far fa-comments"></i>
+                                            <!-- Our total_comments variable goes before the closing strong tag -->
+                                            {{ total_comments }}</strong>
+                                        {% endwith %}</p>
+                                    <a href="{% url 'post_detail' post.slug %}">Read more</a>
                                 </div>
                         </div>
                     </div>

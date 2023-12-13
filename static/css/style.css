@@ -1,3 +1,8 @@
+/* General Styles */
+p {
+    margin-bottom: 0px;
+}
+
 /* Navbar */
 .navbar-brand {
     margin-left: 10px;
@@ -7,7 +12,9 @@
     max-width: 40px;
 }
 
-.card-body {
+/* Post List */
+
+.pl-card {
     border: solid #bebebe;
     background-color: white;
     padding: 0;
@@ -17,7 +24,7 @@
     position: relative;
 }
 
-.image-flash-date {
+.flash-date {
     position: absolute;
     top: 5%;
     min-width: 18%;
@@ -26,7 +33,7 @@
     background-color: rgba(255, 255, 255, 0.8)
 }
 
-.image-flash-title {
+.flash-title {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.6);
     bottom: 0px;
@@ -36,7 +43,7 @@
     padding-left: 5px;
 }
 
-.date {
+.pl-date {
     color: black;
     margin: 4px;
 }
@@ -46,16 +53,26 @@
     color: black;
 }
 
-p {
-    margin-bottom: 0px;
-}
-
-.post-body {
+.pl-card-body {
     position: relative;
     padding: 5px;
 }
 
-.card-likes {
+.pl-likes {
     position: absolute;
     right: 5px;
+}
+
+/* Post Detail */
+.featured-image {
+    height: 65vh;
+    object-fit: cover;
+}
+
+.pd-likes {
+    text-align: right;
+}
+
+.pd-card {
+    border: none;
 }
