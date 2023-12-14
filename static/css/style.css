@@ -76,3 +76,8 @@ p {
 .pd-card {
     border: none;
 }
+
+.comments {
+    border-radius: 5px;
+    background-color: grey;
+}
