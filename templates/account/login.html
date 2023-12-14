@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load allauth account socialaccount %}
+{% block head_title %}
+{% trans "Sign In" %}
+{% endblock head_title %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 mx-auto">
+            <h3 class="text-center">{% trans "Sign In" %}</h3>
+            <p class="text-center">Please log in to like and leave comments. </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 mx-auto mt-3">
+            <form class="login" method="POST" action="{% url 'account_login' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                <button class="btn btn-dark mt-3" type="submit">{% trans "Sign In" %}</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 mx-auto mt-3">
+            <p class="text-muted">
+                {% blocktrans %}Don't have an account yet? <br>Register
+                <a class="text-reset" href="{{ signup_url }}">here!</a>{% endblocktrans %}
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock content %}
