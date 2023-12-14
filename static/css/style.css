@@ -15,7 +15,7 @@ p {
 /* Post List */
 
 .pl-card {
-    border: solid #bebebe;
+    border: solid lightgray;
     background-color: white;
     padding: 0;
 }
@@ -69,15 +69,16 @@ p {
     object-fit: cover;
 }
 
-.pd-likes {
-    text-align: right;
-}
-
 .pd-card {
     border: none;
 }
 
+.text-align-right {
+    text-align: right;
+}
+
 .comments {
     border-radius: 5px;
-    background-color: grey;
+    background-color: lightgray;
+    margin-bottom: 10px;
 }
