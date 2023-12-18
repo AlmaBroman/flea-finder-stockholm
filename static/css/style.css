@@ -95,3 +95,19 @@ p {
     margin-bottom: 10px;
 }
 
+/* Register */
+
+.register-container {
+    margin-top: 40px;
+    border: solid;
+    max-width: 500px;
+}
+
+.signup > p {
+    margin-bottom: 10px;
+}
+
+.signup > ul {
+    color: grey;
+    font-size: x-small;
+}
