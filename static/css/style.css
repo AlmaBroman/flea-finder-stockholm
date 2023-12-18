@@ -82,3 +82,16 @@ p {
     background-color: lightgray;
     margin-bottom: 10px;
 }
+
+/* Login */
+
+.login-container {
+    margin-top: 40px;
+    border: solid;
+    max-width: 500px;
+}
+
+.login > p {
+    margin-bottom: 10px;
+}
+
