@@ -111,3 +111,10 @@ p {
     color: grey;
     font-size: x-small;
 }
+
+/* Sign Out */
+.sign-out-container {
+    margin-top: 40px;
+    border: solid;
+    max-width: 500px;
+}
