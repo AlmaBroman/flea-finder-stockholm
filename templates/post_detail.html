@@ -1,5 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
+{% load crispy_forms_tags %}
+
 <div class="container">
     <div class="row">
         <div class="col-12 mt-3">
@@ -34,7 +36,7 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-8 card mb-4  mt-3 pd-card">
+        <div class="col-12 card mb-4  mt-3 pd-card">
             <h3>Comments:</h3>
             <div class="card-body">
                 <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
@@ -55,9 +57,24 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="col-md-4 card mb-4  mt-3 pd-card">
+        <div class="col-12 card mb-4  mt-3 pd-card">
             <div class="card-body">
-                <!-- For later -->
+                {% if commented %}
+                <div class="alert alert-success" role="alert">
+                    Your comment is awaiting approval
+                </div>
+                {% else %}
+                {% if user.is_authenticated %}
+
+                <h3>Leave a comment:</h3>
+                <p>Posting as: {{ user.username }}</p>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-dark btn-lg mt-3">Submit</button>
+                
+                {% endif %}
+                {% endif %}
             </div>
         </div>
     </div>
