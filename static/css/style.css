@@ -102,6 +102,10 @@ p {
 }
 
 /* Login */
+.small-grey {
+    font-size: small;
+    color: grey;
+}
 
 .login-container {
     margin-top: 40px;
