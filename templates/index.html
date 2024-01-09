@@ -14,10 +14,10 @@
                         <div class="card-body pl-card">
                                 <div class="image-container">
                                     {% if "placeholder" in post.featured_image.url %}
-                                    <img class="card-img-top"
+                                    <img class="card-img-top pl-img"
                                         src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="">
                                     {% else %}
-                                    <img class="card-img-top" src="{{ post.featured_image.url }}">
+                                    <img class="card-img-top pl-img" src="{{ post.featured_image.url }}">
                                     {% endif %}
                                     <div class="flash-date">
                                         <p class="pl-date">{{ post.event_start|date:"j M" }}</p>

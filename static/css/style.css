@@ -24,6 +24,11 @@ p {
     position: relative;
 }
 
+.pl-img {
+    height: 30vh;
+    object-fit: cover;
+}
+
 .flash-date {
     position: absolute;
     top: 5%;
