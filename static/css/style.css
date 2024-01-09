@@ -27,6 +27,7 @@ p {
 .pl-img {
     height: 30vh;
     object-fit: cover;
+    border-radius: 0;
 }
 
 .flash-date {
