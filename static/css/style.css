@@ -107,20 +107,23 @@ p {
     color: red;
 }
 
-/* Login */
-.small-grey {
-    font-size: small;
-    color: grey;
-}
-
-.login-container {
-    margin-top: 40px;
+/* Add Event */
+.add-post-container {
+    margin-top: 20px;
     border: solid;
     max-width: 500px;
 }
 
-.login > p {
-    margin-bottom: 10px;
+.post-form > p {
+    margin-bottom: 5px;
+}
+
+.post-form label {
+    width: 100%;
+}
+
+.post-form textarea {
+    width: 100%;
 }
 
 /* Register */
@@ -138,6 +141,22 @@ p {
 .signup > ul {
     color: grey;
     font-size: x-small;
+}
+
+/* Login */
+.small-grey {
+    font-size: small;
+    color: grey;
+}
+
+.login-container {
+    margin-top: 40px;
+    border: solid;
+    max-width: 500px;
+}
+
+.login > p {
+    margin-bottom: 10px;
 }
 
 /* Sign Out */
