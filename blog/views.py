@@ -9,7 +9,7 @@ from .forms import PostForm, CommentForm
 
 class PostList (generic.ListView):
     model = Post
-    queryset = Post.objects.order_by('event_start')
+    queryset = Post.objects.order_by('start_date')
     template_name = 'index.html'
     paginate_by = 6
 

@@ -20,7 +20,7 @@
                                     <img class="card-img-top pl-img" src="{{ post.featured_image.url }}">
                                     {% endif %}
                                     <div class="flash-date">
-                                        <p class="pl-date">{{ post.event_start|date:"j M" }}</p>
+                                        <p class="pl-date">{{ post.start_date|date:"j M" }}</p>
                                     </div>
                                     <div class="flash-title">
                                         <h5 class="card-title">{{ post.title }}</h5>
@@ -28,9 +28,9 @@
                                 </div>
                                 <div class="post-body pl-card-body">
                                     <p class="card-text">{{ post.adress }}</p>
-                                    <p class="card-text">{{ post.event_start|date:"P" }} - {{ post.event_end|date:"P" }}
+                                    <p class="card-text">{{ post.start_time|time:"P" }} - {{ post.end_time|time:"P" }}
                                     </p>
-                                    <p class="card-text">{{ post.event_start|date:"j F" }}</p>
+                                    <p class="card-text">{{ post.start_date|date:"j F" }}</p>
                                     <p class="pl-likes">{{ post.number_of_likes }} <i class="far fa-heart"></i></p>
                                     <a href="{% url 'post_detail' post.slug %}">Read more</a>
                                 </div>

@@ -20,8 +20,8 @@
             <h2 class="post-title">{{ post.title }}</h2>
         </div>
         <div class="col-12 mt-3">
-            <p><strong>Date: </strong>{{ post.event_start|date:"j F Y" }}</p>
-            <p><strong>Time: </strong>{{ post.event_start|date:"P" }} - {{ post.event_end|date:"P" }}</p>
+            <p><strong>Date: </strong>{{ post.start_date|date:"j F Y" }}</p>
+            <p><strong>Time: </strong>{{ post.start_time|time:"P" }} - {{ post.end_time|time:"P" }}</p>
             <p><strong>Location: </strong> <a href="{{ post.map_link }}" target="_blank">{{ post.adress }}</a></p>
             <p class="mt-3">{{ post.description | safe }}</p>
             <div class="text-align-right">

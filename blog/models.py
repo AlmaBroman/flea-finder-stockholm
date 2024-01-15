@@ -10,8 +10,9 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
     updated_on = models.DateTimeField(auto_now=True)
     description = models.TextField()
-    event_start = models.DateTimeField()
-    event_end = models.TimeField()
+    start_date = models.DateField()
+    start_time = models.TimeField()
+    end_time = models.TimeField()
     adress = models.CharField('adress', max_length=1024)
     map_link = models.URLField(max_length=200)
     featured_image = CloudinaryField('image', default='placeholder')
@@ -21,7 +22,7 @@ class Post(models.Model):
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
 
     class Meta:
-        ordering = ['-event_start']
+        ordering = ['-start_date']
 
     def __str__(self):
         return self.title
