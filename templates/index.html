@@ -33,6 +33,8 @@
                                     <p class="card-text">{{ post.start_date|date:"j F" }}</p>
                                     <p class="pl-likes">{{ post.number_of_likes }} <i class="far fa-heart"></i></p>
                                     <a href="{% url 'post_detail' post.slug %}">Read more</a>
+                                    <a href="{% url 'update_post' post.slug %}">(edit)</a>
+                                    <a href="#">(delete)</a>
                                 </div>
                         </div>
                     </div>

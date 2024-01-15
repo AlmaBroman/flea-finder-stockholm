@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from .models import Post
@@ -86,6 +86,17 @@ class AddPost(CreateView):
     template_name = 'add_post.html'
     success_url = reverse_lazy('home')
 
-    def form_valid(self,form):
+    def form_valid(self, form):
         form.instance.author = self.request.user
         return super(CreateView, self).form_valid(form)
+
+
+class UpdatePost(UpdateView):
+    model = Post
+    form_class = PostForm
+    template_name = 'update_post.html'
+    success_url = reverse_lazy('home')
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super(UpdateView, self).form_valid(form)

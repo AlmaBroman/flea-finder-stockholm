@@ -16,8 +16,11 @@
         </div>
     </div>
     <div class="row mt-3">
-        <div class="col-11">
+        <div class="col-10">
             <h2 class="post-title">{{ post.title }}</h2>
+        </div>
+        <div class="col-2">
+            <a href="{% url 'update_post' post.slug %}">Edit</a>
         </div>
         <div class="col-12 mt-3">
             <p><strong>Date: </strong>{{ post.start_date|date:"j F Y" }}</p>
