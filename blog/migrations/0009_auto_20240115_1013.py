@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='post',
             name='start_date',
-            field=models.DateField(default='00:00:00'),
+            field=models.DateField(default=django.utils.timezone.now),
             preserve_default=False,
         ),
         migrations.AlterField(
