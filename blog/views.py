@@ -3,6 +3,7 @@ from django.views import generic, View
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
+from django.contrib import messages
 from .models import Post
 from .forms import PostForm, CommentForm
 
@@ -88,6 +89,8 @@ class AddPost(CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
+        msg = "Your event was added"
+        messages.add_message(self.request, messages.SUCCESS, msg)
         return super(CreateView, self).form_valid(form)
 
 
@@ -99,6 +102,8 @@ class UpdatePost(UpdateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
+        msg = "Your event was updated"
+        messages.add_message(self.request, messages.SUCCESS, msg)
         return super(UpdateView, self).form_valid(form)
 
 
@@ -108,4 +113,6 @@ class DeletePost(DeleteView):
     success_url = reverse_lazy('home')
 
     def delete(self, request, *args, **kwargs):
+        msg = "Your event was deleted"
+        messages.add_message(self.request, messages.SUCCESS, msg)
         return super(DeleteView, self).delete(request, *args, **kwargs)
