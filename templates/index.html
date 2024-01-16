@@ -12,30 +12,34 @@
                 <div class="col-md-4 mb-3">
                     <div class="card-mb-4">
                         <div class="card-body pl-card">
-                                <div class="image-container">
-                                    {% if "placeholder" in post.featured_image.url %}
-                                    <img class="card-img-top pl-img"
-                                        src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="">
-                                    {% else %}
-                                    <img class="card-img-top pl-img" src="{{ post.featured_image.url }}">
-                                    {% endif %}
-                                    <div class="flash-date">
-                                        <p class="pl-date">{{ post.start_date|date:"j M" }}</p>
-                                    </div>
-                                    <div class="flash-title">
-                                        <h5 class="card-title">{{ post.title }}</h5>
+                            <div class="image-container">
+                                {% if "placeholder" in post.featured_image.url %}
+                                <img class="card-img-top pl-img"
+                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="">
+                                {% else %}
+                                <img class="card-img-top pl-img" src="{{ post.featured_image.url }}">
+                                {% endif %}
+                                <div class="flash-date">
+                                    <p class="pl-date">{{ post.start_date|date:"j M" }}</p>
+                                </div>
+                                <div class="flash-title d-flex justify-content-between">
+                                    <h5 class="mb-0">{{ post.title }}</h5>
+                                    <div>
+                                        <a href="{% url 'update_post' post.slug %}"><i
+                                                class="far fa-edit fa-sm"></i></a>
+                                        <a href="{% url 'delete_post' post.slug %}"><i
+                                                class="fas fa-trash fa-sm"></i></a>
                                     </div>
                                 </div>
-                                <div class="post-body pl-card-body">
-                                    <p class="card-text">{{ post.adress }}</p>
-                                    <p class="card-text">{{ post.start_time|time:"P" }} - {{ post.end_time|time:"P" }}
-                                    </p>
-                                    <p class="card-text">{{ post.start_date|date:"j F" }}</p>
-                                    <p class="pl-likes">{{ post.number_of_likes }} <i class="far fa-heart"></i></p>
-                                    <a href="{% url 'post_detail' post.slug %}">Read more</a>
-                                    <a href="{% url 'update_post' post.slug %}">(edit)</a>
-                                    <a href="{% url 'delete_post' post.slug %}">(delete)</a>
-                                </div>
+                            </div>
+                            <div class="post-body pl-card-body">
+                                <p class="card-text">{{ post.adress }}</p>
+                                <p class="card-text">{{ post.start_time|time:"P" }} - {{ post.end_time|time:"P" }}
+                                </p>
+                                <p class="card-text">{{ post.start_date|date:"j F" }}</p>
+                                <p class="pl-likes">{{ post.number_of_likes }} <i class="far fa-heart fa-sm"></i></p>
+                                <a href="{% url 'post_detail' post.slug %}">Read more</a>
+                            </div>
                         </div>
                     </div>
                 </div>

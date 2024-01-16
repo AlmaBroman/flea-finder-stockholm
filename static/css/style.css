@@ -35,7 +35,6 @@ p {
     top: 5%;
     min-width: 18%;
     right: -2px;
-    padding-right: 5px;
     background-color: rgba(255, 255, 255, 0.8)
 }
 
@@ -45,18 +44,12 @@ p {
     bottom: 0px;
     color: white;
     width: 100%;
-    padding-top: 5px;
-    padding-left: 5px;
+    padding: 5px;
 }
 
 .pl-date {
     color: black;
     margin: 4px;
-}
-
-.post-link {
-    text-decoration: none;
-    color: black;
 }
 
 .pl-card-body {
