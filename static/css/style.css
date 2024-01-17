@@ -12,6 +12,10 @@ p {
     max-width: 40px;
 }
 
+.margin-right-10px {
+    margin-right: 10px
+}
+
 /* Post List */
 
 .pl-card {
