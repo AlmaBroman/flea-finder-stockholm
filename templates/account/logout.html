@@ -4,11 +4,14 @@
     {% trans "Logout" %}
 {% endblock head_title %}
 {% block content %}
+<div class="row">
+    <div class="col-8 mx-auto mt-3 text-center">
+        <h3>{% trans "Sign Out" %}</h3>
+    </div>
+</div>
 <div class="container sign-out-container">
     <div class="row">
         <div class="col-8 mx-auto mt-3 text-center">
-            <h3>{% trans "Sign Out" %}</h3>
-
             <p>{% trans 'Are you sure you want to sign out?' %}</p>
         </div>
     </div>

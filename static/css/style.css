@@ -126,7 +126,8 @@ p {
 /* Register */
 
 .register-container {
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     border: solid;
     max-width: 500px;
 }
@@ -159,7 +160,8 @@ p {
 
 /* Sign Out */
 .sign-out-container {
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     border: solid;
     max-width: 500px;
 }

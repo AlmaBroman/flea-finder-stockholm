@@ -14,11 +14,11 @@
 <div class="container login-container">
     <div class="row">
         <div class="col mx-auto mt-3 text-center">
-        <p class="text-center">Please sign in to like and leave comments. </p>
-    </div>
+            <p class="text-center">Please sign in to like and leave comments. </p>
+        </div>
     </div>
     <div class="row">
-        <div class="col-md-6 mx-auto mt-3 text-center">
+        <div class="col-md-6 mx-auto mt-3 mb-3 text-center">
             <form class="login" method="POST" action="{% url 'account_login' %}">
                 {% csrf_token %}
                 {{ form.as_p }}
@@ -29,15 +29,14 @@
             </form>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-6 mx-auto mt-3 mb-3">
-            <p class="small-grey text-center">
-                {% blocktrans %}Don't have an account yet? <br>
-                <a href="{{ signup_url }}">Register</a>{% endblocktrans %}
-            </p>
-        </div>
-    </div>
 </div>
+<div class="row">
+    <div class="col-md-6 mx-auto mt-3">
+        <p class="small-grey text-center">
+            {% blocktrans %}Don't have an account yet? <br>
+            <a href="{{ signup_url }}">Register</a>{% endblocktrans %}
+        </p>
+    </div>
 </div>
 
 {% endblock content %}
