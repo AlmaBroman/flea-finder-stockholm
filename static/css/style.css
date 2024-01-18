@@ -123,6 +123,12 @@ p {
     width: 100%;
 }
 
+/* Delete Event */
+.delete-post-container {
+    border: solid;
+    max-width: 500px;
+}
+
 /* Register */
 
 .register-container {
