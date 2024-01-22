@@ -1,5 +1,13 @@
-from .models import Post, Comment
+from .models import Post, Comment, Category
 from django import forms
+
+
+choices = Category.objects.all().values_list('name','name')
+
+choice_list = []
+
+for item in choices:
+    choice_list.append(item)
 
 
 class PostForm(forms.ModelForm):
@@ -29,6 +37,7 @@ class PostForm(forms.ModelForm):
             'description': forms.Textarea(attrs={'placeholder': 'Write a description of your event here'}),
             'start_date': forms.DateInput(attrs={'type': 'date', 'placeholder': 'yyyy-mm-dd', 'class': 'form-control'}), 
             'start_time': forms.TimeInput(attrs={'type': 'time'}),
+            'category': forms.Select(choices=choice_list),
             'end_time': forms.TimeInput(attrs={'type': 'time'}),
             'adress': forms.TextInput(attrs={'placeholder': 'Streetname 1'}),
         }

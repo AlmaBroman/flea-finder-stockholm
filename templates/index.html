@@ -40,6 +40,7 @@
                                 <p class="card-text">{{ post.start_time|time:"P" }} - {{ post.end_time|time:"P" }}
                                 </p>
                                 <p class="card-text">{{ post.start_date|date:"j F" }}</p>
+                                <p class="card-text"><i>{{ post.category }}</i></p>
                                 <p class="pl-likes">{{ post.number_of_likes }} <i class="far fa-heart fa-sm"></i></p>
                                 <a href="{% url 'post_detail' post.slug %}">Read more</a>
                             </div>

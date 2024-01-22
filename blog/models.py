@@ -4,6 +4,13 @@ from django.template.defaultfilters import slugify
 from cloudinary.models import CloudinaryField
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -17,7 +24,7 @@ class Post(models.Model):
     map_link = models.URLField(max_length=200)
     featured_image = CloudinaryField('image', default='placeholder')
     created_on = models.DateTimeField(auto_now_add=True)
-    category = models.CharField(max_length=200)
+    category = models.CharField(max_length=200, default='uncategorized')
     additional_link = models.URLField(max_length=200, blank=True)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
 
