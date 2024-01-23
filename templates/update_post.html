@@ -3,24 +3,34 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
+<div class="row mx-auto">
+    <div class="col-8 mx-auto mt-3 text-center">
+        <h2>Update Event</h2>
+    </div>
+</div>
 <div class="container add-post-container mb-3">
     <div class="row mx-auto">
-        <div class="col-8 mx-auto mt-3 text-center">
-            <h2>Update Event</h2>
-        </div>
-    </div>
-
-    <div class="row mx-auto">
         <div class="col mt-3 mb-3">
-            <form method="POST" class="post-form">
-                {% csrf_token %}
-                {{ form.as_p | safe }}
-                <div class="d-flex justify-content-center mt-3">
-                    <button type="submit" class="btn btn-dark">Save</button>
+            {% if user.is_authenticated %}
+                {% if user.id == post.author.id %}
+                    <form method="POST" class="post-form">
+                        {% csrf_token %}
+                        {{ form.as_p | safe }}
+                        <div class="d-flex justify-content-center mt-3">
+                            <button type="submit" class="btn btn-dark">Save</button>
+                        </div>
+                    </form>
+                {% else %}
+                    <div class="d-flex text-center">
+                        <p>Oops! You need to be signed in as the author of this event in order to update it!</p>
+                    </div>
+                {% endif %}
+            {% else %}
+                <div class="d-flex text-center">
+                    <p>Oops! You need to be signed in as the author of this event in order to update it!</p>
                 </div>
-            </form>
+            {% endif %}
         </div>
     </div>
 </div>
-
 {%endblock%}

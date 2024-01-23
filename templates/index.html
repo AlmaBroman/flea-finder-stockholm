@@ -26,12 +26,14 @@
                                     <h5 class="mb-0">{{ post.title }}</h5>
                                     {% if user.is_authenticated %}
                                     <!-- only supposed to show if the logged in user is the author of the post -->
-                                    <div>
-                                        <a href="{% url 'update_post' post.slug %}"><i
-                                                class="far fa-edit fa-sm"></i></a>
-                                        <a href="{% url 'delete_post' post.slug %}"><i
-                                                class="fas fa-trash fa-sm"></i></a>
-                                    </div>
+                                        {% if user.id == post.author.id %}
+                                            <div>
+                                                <a href="{% url 'update_post' post.slug %}"><i
+                                                        class="far fa-edit fa-sm"></i></a>
+                                                <a href="{% url 'delete_post' post.slug %}"><i
+                                                        class="fas fa-trash fa-sm"></i></a>
+                                            </div>
+                                        {% endif %}
                                     {% endif %}
                                 </div>
                             </div>
