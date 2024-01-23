@@ -25,7 +25,6 @@ class Post(models.Model):
     featured_image = CloudinaryField('image', default='placeholder')
     created_on = models.DateTimeField(auto_now_add=True)
     category = models.CharField(max_length=200, default='uncategorized')
-    additional_link = models.URLField(max_length=200, blank=True)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
 
     class Meta:

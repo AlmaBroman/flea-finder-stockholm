@@ -1,6 +1,6 @@
 from .models import Post, Comment, Category
 from django import forms
-
+from django_summernote.widgets import SummernoteWidget
 
 choices = Category.objects.all().values_list('name','name')
 
@@ -34,7 +34,7 @@ class PostForm(forms.ModelForm):
 
         widgets = {
             'title': forms.TextInput(attrs={'placeholder': 'Write a title here'}),
-            'description': forms.Textarea(attrs={'placeholder': 'Write a description of your event here'}),
+            'description': SummernoteWidget(attrs={'placeholder': 'Write a description of your event here...'}),
             'start_date': forms.DateInput(attrs={'type': 'date', 'placeholder': 'yyyy-mm-dd', 'class': 'form-control'}), 
             'start_time': forms.TimeInput(attrs={'type': 'time'}),
             'category': forms.Select(choices=choice_list),
