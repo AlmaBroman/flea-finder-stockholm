@@ -13,8 +13,9 @@
         <div class="col mt-3 mb-3">
             {% if user.is_authenticated %}
                 {% if user.id == post.author.id %}
-                    <form method="POST" class="post-form">
+                    <form method="POST" class="post-form" enctype="multipart/form-data">
                         {% csrf_token %}
+                        {{ form.media }}
                         {{ form.as_p | safe }}
                         <div class="d-flex justify-content-center mt-3">
                             <button type="submit" class="btn btn-dark">Save</button>

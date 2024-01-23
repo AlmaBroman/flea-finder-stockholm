@@ -21,6 +21,7 @@ class PostForm(forms.ModelForm):
             'adress', 
             'map_link',
             'featured_image', 
+            'image_alt',
             'category', 
             'description')
         
@@ -29,7 +30,8 @@ class PostForm(forms.ModelForm):
             'start_time': 'Start Time', 
             'end_time': 'End Time', 
             'map_link': 'Map Link (optional)', 
-            'featured_image': 'Image (optional)', 
+            'featured_image': 'Image (optional)',
+            'image_alt': 'Image Description (required)',
         }
 
         widgets = {
