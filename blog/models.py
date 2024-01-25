@@ -24,10 +24,11 @@ class Post(models.Model):
     adress = models.CharField('adress', max_length=1024)
     map_link = models.URLField(max_length=200)
     featured_image = ResizedImageField(size=[1000, None], quality=75, upload_to='blog/', force_format='WEBP', default='placeholder')
-    image_alt = models.CharField(max_length=100, blank=False, null=False,)
+    image_alt = models.CharField(max_length=100, default='event image')
     created_on = models.DateTimeField(auto_now_add=True)
     category = models.CharField(max_length=200, default='uncategorized')
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
+    # approved = models.BooleanField(default=False)
 
     class Meta:
         ordering = ['-start_date']
@@ -46,7 +47,6 @@ class Post(models.Model):
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
     name = models.CharField(max_length=80)
-    email = models.EmailField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
