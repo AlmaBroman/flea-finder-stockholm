@@ -1,14 +1,31 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="row">
-    <div class="col-md-6 mx-auto mt-3">
-        <h2 class="text-center">{{ cats }}</h2>
-    </div>
+
 <div class="container-fluid">
+    <div class="row">
+        
+        <!-- Categories Dropdown -->
+        <div class="col-12 col-md-10 mx-auto mt-3 text-center">
+            {% if cat_menu %}
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Filter by Category
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    {% for item in cat_menu %}
+                    <a class="dropdown-item" href="{% url 'category_view' item|slugify %}">{{ item }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Post List -->
         <div class="col-12 col-md-10 mx-auto mt-3 left">
             <div class="row">
-                {% for post in category_posts %}
+                {% for post in post_list %}
                 <div class="col-md-4 mb-3">
                     <div class="card-mb-4">
                         <div class="card-body pl-card">
@@ -18,7 +35,7 @@
                                     src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="">
                                 {% else %}
                                 <img class="card-img-top pl-img" src="{{ post.featured_image.url }}"
-                                    alt="{{ post.image_alt}} ">
+                                    alt="{{ post.image_alt }}">
                                 {% endif %}
                                 <div class="flash-date">
                                     <p class="pl-date">{{ post.start_date|date:"j M" }}</p>
@@ -52,12 +69,25 @@
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
             </div>
+            <div class="row">
                 {% endif %}
                 {% endfor %}
+            </div>
         </div>
     </div>
-    <div class="row mt-3">
-        <div class="col text-center">
-            <a href="{% url 'post_list' %}" role="button">back to all events</a>
-        </div>
-    {% endblock %}
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number}}" class="page-link">NEXT &raquo;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
+
+
+{% endblock %}

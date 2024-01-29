@@ -8,10 +8,18 @@ from .models import Post, Category
 from .forms import PostForm, CommentForm
 
 
+def index(request):
+    queryset = Post.objects.all()[:5]
+    context = {
+        'post_list': queryset,
+    }
+    return render(request, 'index.html', context)
+
+
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.order_by('start_date')
-    template_name = 'index.html'
+    template_name = 'post_list.html'
     paginate_by = 6
 
     def get_context_data(self, *args, **kwargs):
