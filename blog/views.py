@@ -4,15 +4,27 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.contrib import messages
-from .models import Post
+from .models import Post, Category
 from .forms import PostForm, CommentForm
 
 
-class PostList (generic.ListView):
+class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.order_by('start_date')
     template_name = 'index.html'
     paginate_by = 6
+
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Category.objects.all()
+        context = super(PostList, self).get_context_data(*args, **kwargs)
+        context["cat_menu"] = cat_menu
+        return context
+
+
+def CategoryView(request, cats):
+    category_posts = Post.objects.filter(category=cats.replace('-', ' '))
+    return render(request, 'categories.html', {'cats':cats.title().replace(' ', '-'), 'category_posts':category_posts})
+
 
 class PostDetail(View):
 
