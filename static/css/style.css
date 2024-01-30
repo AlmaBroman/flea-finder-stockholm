@@ -7,17 +7,41 @@ p {
     height: 60vh;
 }
 
+.dark-bg {
+    background-color: #212529;
+}
+
+.black-bg {
+    background-color: black;
+}
+
+.small-grey {
+    font-size: small;
+    color: grey;
+}
+
 /* Navbar */
+
 .navbar-brand {
     margin-left: 10px;
 }
 
-.brand img {
-    max-width: 40px;
-}
-
 .margin-right-10px {
     margin-right: 10px
+}
+
+/* Home Page */
+.carousel-image {
+    height: 60vh;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.welcome {
+    background-color: black;
+    color: white;
+    padding: 60px;
 }
 
 /* Post List */
@@ -152,10 +176,6 @@ p {
 }
 
 /* Sign in */
-.small-grey {
-    font-size: small;
-    color: grey;
-}
 
 .login-container {
     margin-top: 20px;

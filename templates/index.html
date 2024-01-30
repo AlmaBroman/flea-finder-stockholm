@@ -2,13 +2,15 @@
 {% load static %}
 {% block content %}
 <div class="row">
-    <div class="col-md-4 pr-0">
-        <img class="img-fluid" src="static/media/images/karine-germain-iIWCjgK3704-unsplash.jpg" alt="">
+    <!-- Hero Image -->
+    <div class="d-none d-md-block col-md-4 pr-0 black-bg">
+        <div class="home-image">
+            <img class="img-fluid" src="static/media/images/karine-germain-iIWCjgK3704-unsplash.jpg" alt="">
+        </div>
     </div>
-    <div class="col-md-8 pl-0">
-
-        <!-- Carousel -->
+    <div class="col-md-8 pl-0 black-bg">
         <div class="bd-example">
+            <!-- Carousel -->
             <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -20,7 +22,10 @@
                 <div class="carousel-inner">
                     {% for post in post_list %}
                     <div class="carousel-item height-60-vh {% if forloop.counter0 == 0 %}active{% endif %}">
-                        <img src="{{ post.featured_image.url }}" class="d-block w-100" alt="{{ post.image_alt }}">
+                        <div class="image-container">
+                            <img src="{{ post.featured_image.url }}" class="d-block carousel-image"
+                                alt="{{ post.image_alt }}">
+                        </div>
                         <div class="carousel-caption d-none d-md-block">
                             <h5>{{ post.title }}</h5>
                             <p>{{ post.adress }}</p>
@@ -39,7 +44,23 @@
                 </a>
             </div>
         </div>
+        <!-- Welcome section -->
+        <div class="container welcome">
+            <h5 mb-3>Welcome to Flea Finder Stockholm!</h5>
+            <p> Our goal is to give you the complete guide to find the best markets in Stockholm.</p>
+            <br>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore accusantium iusto quas illum magni alias
+                magnam exercitationem veritatis. Nostrum corporis voluptas deserunt similique a ea consequatur nam
+                laboriosam fugiat beatae?</p>
+            <br>
+            <p>So what are you waiting for begin browsing by clicking the button down below!</p>
+            <br>
+            <div class="d-flex justify-content-center">
+            <a class="btn btn-light text-center" href="{% url 'post_list' %}" role="button">View Events</a>
+        </div>
+        </div>
     </div>
+    <!-- Welcome section -->
 </div>
 
 {% endblock %}
