@@ -52,7 +52,7 @@ p {
     padding: 0;
 }
 
-.image-container {
+.pl-img-title-date {
     position: relative;
 }
 
@@ -91,7 +91,23 @@ p {
 
 .pl-likes {
     position: absolute;
-    right: 5px;
+    right: 20px;
+    bottom: 22px;
+}
+
+.page-link{
+    color: black;
+    background-color: #fff;
+}
+
+.page-link:hover{
+    color: black;
+}
+
+.page-item.active .page-link {
+    color: white;
+    background-color: dimgray;
+    border-color: dimgrey;
 }
 
 /* Post Detail */
