@@ -29,7 +29,8 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['8000-almabroman-fleafinderst-bwnhj04jl3v.ws-eu107.gitpod.io', 'flea-market-sthlm-fc73d9ace203.herokuapp.com', 'localhost']
 
