@@ -71,20 +71,15 @@
                 <div class="comments">
                     <p class="font-weight-bold">
                         {{ comment.name }}
-                        <span class=" text-muted font-weight-normal">
+                        <span class="text-muted font-weight-normal">
                             {{ comment.created_on }}
                         </span> wrote:
                     </p>
                     {{ comment.body | linebreaks }}
                 </div>
                 {% endfor %}
+                {% if user.is_authenticated %}
                 <div class="comment-form mt-3">
-                    {% if commented %}
-                    <div class="alert mb-0" role="alert">
-                        <h6>Your comment is awaiting approval.</h6>
-                    </div>
-                    {% else %}
-                    {% if user.is_authenticated %}
                     <h5>Leave a comment:</h5>
                     <p>Posting as: {{ user.username }}</p>
                     <form method="post" style="margin-top: 1.3em;">
@@ -94,9 +89,8 @@
                             <button type="submit" class="btn btn-light mt-3">Submit</button>
                         </div>
                     </form>
-                    {% endif %}
-                    {% endif %}
                 </div>
+                {% endif %}
             </div>
         </div>
     </div>

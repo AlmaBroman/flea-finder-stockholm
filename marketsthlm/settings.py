@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 # DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['8000-almabroman-fleafinderst-bwnhj04jl3v.ws-eu107.gitpod.io', 'flea-market-sthlm-fc73d9ace203.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['8000-almabroman-fleafinderst-bwnhj04jl3v.ws-eu108.gitpod.io', 'flea-market-sthlm-fc73d9ace203.herokuapp.com', 'localhost']
 
 
 # Application definition
