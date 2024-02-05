@@ -3,21 +3,37 @@
 {% block content %}
 <div class="row">
     <!-- Hero Image -->
-    <div class="d-none d-md-block col-md-4 pr-0 black-bg">
-        <div class="home-image">
-            <img class="img-fluid" src="static/media/images/karine-germain-iIWCjgK3704-unsplash.jpg" alt="">
-        </div>
+    <div class="col-12 mx-auto">
+        <div class="home-image"></div>
     </div>
-    <div class="col-md-8 pl-0 black-bg">
-        <div class="bd-example">
-            <!-- Carousel -->
-            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <div class="col-md-8 mx-auto mt-3">
+        <!-- Welcome section -->
+        <div class="container mb-3 text-center">
+            <h1 class="display-4">Welcome to Flea Finder Stockholm!</h5>
+            <p class="lead">Your help in finding the best markets in Stockholm.</p>
+            <hr>
+            <p>Whether you're a vendor looking to showcase your
+                products or a shopper seeking unique finds, this app connects you with the pulse of your neighborhood.
+            </p>
+            <br>
+            <p>So what are you waiting for? <br> Begin browsing by clicking the button down below!</p>
+            <br>
+            <div class="d-flex justify-content-center">
+                <a class="btn btn-dark text-center" href="{% url 'post_list' %}" role="button">View Events</a>
+            </div>
+        </div>
+</div>
+        <div class="col-12 col-md-10 mt-3 mb-3 carousel-container mx-auto">
+        <!-- Carousel -->
+        <div class="carousel">
+            <h2 class="text-center">Upcoming Events</h2>
+            <div id="carouselCaptions" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                    <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
-                    <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+                    <li data-target="#carouselCaptions" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselCaptions" data-slide-to="1"></li>
+                    <li data-target="#carouselCaptions" data-slide-to="2"></li>
+                    <li data-target="#carouselCaptions" data-slide-to="3"></li>
+                    <li data-target="#carouselCaptions" data-slide-to="4"></li>
                 </ol>
                 <div class="carousel-inner">
                     {% for post in post_list %}
@@ -26,7 +42,7 @@
                             <img src="{{ post.featured_image.url }}" class="d-block carousel-image"
                                 alt="{{ post.image_alt }}">
                         </div>
-                        <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption d-none d-md-block .dark-bg">
                             <h5>{{ post.title }}</h5>
                             <p>{{ post.adress }}</p>
                             <a href="{% url 'post_detail' post.slug %}">Read more</a>
@@ -34,33 +50,18 @@
                     </div>
                     {% endfor %}
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <a class="carousel-control-prev" href="#carouselCaptions" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <a class="carousel-control-next" href="#carouselCaptions" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
             </div>
         </div>
-        <!-- Welcome section -->
-        <div class="container welcome">
-            <h5 mb-3>Welcome to Flea Finder Stockholm!</h5>
-            <p> Our goal is to give you the complete guide to find the best markets in Stockholm.</p>
-            <br>
-            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore accusantium iusto quas illum magni alias
-                magnam exercitationem veritatis. Nostrum corporis voluptas deserunt similique a ea consequatur nam
-                laboriosam fugiat beatae?</p>
-            <br>
-            <p>So what are you waiting for begin browsing by clicking the button down below!</p>
-            <br>
-            <div class="d-flex justify-content-center">
-            <a class="btn btn-light text-center" href="{% url 'post_list' %}" role="button">View Events</a>
-        </div>
-        </div>
     </div>
-    <!-- Welcome section -->
 </div>
+
 
 {% endblock %}

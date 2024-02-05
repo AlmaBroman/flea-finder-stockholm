@@ -8,8 +8,8 @@ from .models import Post, Category
 from .forms import PostForm, CommentForm
 
 
-def index(request):
-    queryset = Post.objects.all()[:5]
+def index(request): 
+    queryset = Post.objects.all().order_by('start_date')[:5]
     context = {
         'post_list': queryset,
     }

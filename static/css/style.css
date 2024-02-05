@@ -31,6 +31,24 @@ p {
 }
 
 /* Home Page */
+.home-image {
+    background-image: url('/static/media/images/karine-germain-iIWCjgK3704-unsplash.jpg');
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.welcome-container {
+    padding: 60px;
+}
+
+.carousel {
+    padding: 10px;
+    background-color:rgba(230, 230, 230);
+}
+
 .carousel-image {
     height: 60vh;
     width: 100%;
@@ -38,10 +56,18 @@ p {
     border-radius: 0;
 }
 
-.welcome {
-    background-color: black;
-    color: white;
-    padding: 60px;
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    width: 100%;
+    right: 0;
+    bottom: 0px;
+    left: 0;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    color: #fff;
+    text-align: center;
 }
 
 /* Post List */
