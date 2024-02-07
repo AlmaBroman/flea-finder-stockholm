@@ -58,16 +58,19 @@ p {
 
 .carousel-caption {
     background-color: rgba(0, 0, 0, 0.6);
-    position: absolute;
-    width: 100%;
+    bottom: 33%;
     right: 0;
-    bottom: 0px;
     left: 0;
-    z-index: 10;
     padding-top: 20px;
-    padding-bottom: 40px;
-    color: #fff;
-    text-align: center;
+}
+
+.caro-cap-md {
+    bottom: 0px;
+    padding-top: 20px;
+}
+
+.font-size {
+    font-size: small;
 }
 
 /* Post List */

@@ -10,20 +10,21 @@
         <!-- Welcome section -->
         <div class="container mb-3 text-center">
             <h1 class="display-4">Welcome to Flea Finder Stockholm!</h5>
-            <p class="lead">Your help in finding the best markets in Stockholm.</p>
-            <hr>
-            <p>Whether you're a vendor looking to showcase your
-                products or a shopper seeking unique finds, this app connects you with the pulse of your neighborhood.
-            </p>
-            <br>
-            <p>So what are you waiting for? <br> Begin browsing by clicking the button down below!</p>
-            <br>
-            <div class="d-flex justify-content-center">
-                <a class="btn btn-dark text-center" href="{% url 'post_list' %}" role="button">View Events</a>
-            </div>
+                <p class="lead">Your help in finding the best markets in Stockholm.</p>
+                <hr>
+                <p>Whether you're a vendor looking to showcase your
+                    products or a shopper seeking unique finds, this app connects you with the pulse of your
+                    neighborhood.
+                </p>
+                <br>
+                <p>So what are you waiting for? <br> Begin browsing by clicking the button down below!</p>
+                <br>
+                <div class="d-flex justify-content-center">
+                    <a class="btn btn-dark text-center" href="{% url 'post_list' %}" role="button">View Events</a>
+                </div>
         </div>
-</div>
-        <div class="col-12 col-md-10 mt-3 mb-3 carousel-container mx-auto">
+    </div>
+    <div class="col-12 col-md-10 mt-3 mb-3 carousel-container mx-auto">
         <!-- Carousel -->
         <div class="carousel">
             <h2 class="text-center">Upcoming Events</h2>
@@ -42,9 +43,20 @@
                             <img src="{{ post.featured_image.url }}" class="d-block carousel-image"
                                 alt="{{ post.image_alt }}">
                         </div>
-                        <div class="carousel-caption d-none d-md-block .dark-bg">
+                        <div class="carousel-caption d-md-none dark-bg">
                             <h5>{{ post.title }}</h5>
-                            <p>{{ post.adress }}</p>
+                            <div class="font-size">
+                                <p>{{ post.start_time }} - {{ post.end_time }}, {{ post.start_date|date:"j M Y" }}</p>
+                                <p>{{ post.adress }}</p>
+                            </div>
+                            <a href="{% url 'post_detail' post.slug %}">Read more</a>
+                        </div>
+                        <div class="carousel-caption d-none d-md-block dark-bg caro-cap-md">
+                            <h5>{{ post.title }}</h5>
+                            <div class="font-size">
+                                <p>{{ post.start_time }} - {{ post.end_time }}, {{ post.start_date|date:"j M Y" }}</p>
+                                <p>{{ post.adress }}</p>
+                            </div>
                             <a href="{% url 'post_detail' post.slug %}">Read more</a>
                         </div>
                     </div>
