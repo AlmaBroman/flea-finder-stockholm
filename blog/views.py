@@ -64,6 +64,9 @@ class PostDetail(View):
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
 
+        '''
+        Let user create comments
+        '''
         comment_form = CommentForm(data=request.POST)
 
         if comment_form.is_valid():

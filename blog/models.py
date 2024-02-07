@@ -22,7 +22,7 @@ class Post(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField()
     adress = models.CharField('adress', max_length=1024)
-    map_link = models.URLField(max_length=200)
+    map_link = models.URLField(max_length=200, blank=True, null=True)
     featured_image = ResizedImageField(size=[1000, None], quality=75, upload_to='blog/', force_format='WEBP', default='placeholder')
     image_alt = models.CharField(max_length=100, default='event image')
     created_on = models.DateTimeField(auto_now_add=True)

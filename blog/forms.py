@@ -44,6 +44,10 @@ class PostForm(forms.ModelForm):
             'adress': forms.TextInput(attrs={'placeholder': 'Streetname 1'}),
         }
 
+        required = {
+            'map_link': False,
+        }
+
 
 class CommentForm(forms.ModelForm):
     class Meta:
