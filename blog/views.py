@@ -31,7 +31,7 @@ class PostList(generic.ListView):
 
 def CategoryView(request, cats):
     category_posts = Post.objects.filter(category=cats.replace('-', ' '))
-    return render(request, 'categories.html', {'cats':cats.title().replace(' ', '-'), 'category_posts':category_posts})
+    return render(request, 'categories.html', {'cats':cats.title().replace('-', ' '), 'category_posts':category_posts})
 
 
 class PostDetail(View):
