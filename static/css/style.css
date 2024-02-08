@@ -233,6 +233,19 @@ p {
     margin-bottom: 10px;
 }
 
+.login .helptext {
+    display: none;
+}
+
+.login label[for="id_remember"]
+{
+    display:none;
+}
+
+.login #id_remember {
+    display: none;
+}
+
 /* Sign Out */
 .sign-out-container {
     margin-top: 20px;
