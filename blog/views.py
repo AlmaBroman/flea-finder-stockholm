@@ -8,6 +8,10 @@ from .models import Post, Category
 from .forms import PostForm, CommentForm
 
 
+def custom_404(request, exception):
+    return render(request, '404.html', status=404)
+
+
 def index(request): 
     queryset = Post.objects.all().order_by('start_date')[:5]
     context = {

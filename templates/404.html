@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="container-fluid">
+    <div class="row mx-auto">
+        <div class="col mx-auto mt-5 mb-3 text-center">
+            <h1 class="display-4">Oops 404!</h1>
+        </div>
+    </div>
+    <div class="row mx-auto"></div>
+        <div class="col mx-auto mb-3 text-center">
+            <p>It seems this page doesnt exist...</p>
+        </div>
+    </div>
+    <div class="row mx-auto">
+        <div class="col mx-auto mb-3 text-center">
+            <a href="{% url 'home' %}" class="btn btn-dark">Home</a>
+        </div>
+    </div>
+{% endblock %}
