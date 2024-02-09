@@ -32,7 +32,7 @@ p {
 
 /* Home Page */
 .home-image {
-    background-image: url('static/media/images/karine-germain-iIWCjgK3704-unsplash.jpg');
+    background-image: url('https://res.cloudinary.com/abroman/image/upload/v1705576372/pzjvfiekray67tjzq5pq.jpg');
     min-height: 500px;
     background-attachment: fixed;
     background-position: center;
