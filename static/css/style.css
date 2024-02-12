@@ -46,7 +46,7 @@ p {
 
 .carousel {
     padding: 10px;
-    background-color:rgba(230, 230, 230);
+    background-color: rgba(230, 230, 230);
 }
 
 .carousel-image {
@@ -124,12 +124,12 @@ p {
     bottom: 22px;
 }
 
-.page-link{
+.page-link {
     color: black;
     background-color: #fff;
 }
 
-.page-link:hover{
+.page-link:hover {
     color: black;
 }
 
@@ -184,7 +184,7 @@ p {
     max-width: 500px;
 }
 
-.post-form > p {
+.post-form>p {
     margin-bottom: 5px;
 }
 
@@ -211,11 +211,11 @@ p {
     max-width: 500px;
 }
 
-.signup > p {
+.signup>p {
     margin-bottom: 10px;
 }
 
-.signup > ul {
+.signup>ul {
     color: grey;
     font-size: x-small;
 }
@@ -229,7 +229,7 @@ p {
     max-width: 500px;
 }
 
-.login > p {
+.login>p {
     margin-bottom: 10px;
 }
 
@@ -237,9 +237,8 @@ p {
     display: none;
 }
 
-.login label[for="id_remember"]
-{
-    display:none;
+.login label[for="id_remember"] {
+    display: none;
 }
 
 .login #id_remember {

@@ -63,7 +63,8 @@
             </ul>
         </div>
     </nav>
-<!--
+
+    <!-- Flash Messages -->
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
@@ -71,14 +72,13 @@
                 <div class="alert {{ message.tags }} alert-dissmissible fade show d-flex justify-content-between mt-3"
                     id="msg" role="alert">
                     {{ message | safe }}
-                    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
                 </div>
-
                 {% endfor %}
             </div>
         </div>
     </div>
-    -->
 
     <main class="flex-shrink-0 main-bg">
         {% block content %}
