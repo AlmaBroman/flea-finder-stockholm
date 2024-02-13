@@ -15,27 +15,34 @@ class Category(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="blog_posts"
+    )
     updated_on = models.DateTimeField(auto_now=True)
     description = models.TextField()
     start_date = models.DateField()
     start_time = models.TimeField()
     end_time = models.TimeField()
-    adress = models.CharField('adress', max_length=1024)
+    adress = models.CharField("adress", max_length=1024)
     map_link = models.URLField(max_length=200, blank=True, null=True)
-    featured_image = ResizedImageField(size=[1000, None], quality=75, upload_to='blog/', force_format='WEBP', default='placeholder')
-    image_alt = models.CharField(max_length=100, default='event image')
+    featured_image = ResizedImageField(
+        size=[1000, None],
+        quality=75,
+        upload_to="blog/",
+        force_format="WEBP",
+        default="placeholder",
+    )
+    image_alt = models.CharField(max_length=100, default="event image")
     created_on = models.DateTimeField(auto_now_add=True)
-    category = models.CharField(max_length=200, default='uncategorized')
-    likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
-    # approved = models.BooleanField(default=False)
+    category = models.CharField(max_length=200, default="uncategorized")
+    likes = models.ManyToManyField(User, related_name="blog_likes", blank=True)
 
     class Meta:
-        ordering = ['-start_date']
+        ordering = ["-start_date"]
 
     def __str__(self):
         return self.title
-    
+
     def number_of_likes(self):
         return self.likes.count()
 
@@ -45,13 +52,14 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name="comments")
     name = models.CharField(max_length=80)
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordering = ['created_on']
-    
+        ordering = ["created_on"]
+
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
