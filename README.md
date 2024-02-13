@@ -109,6 +109,11 @@ Target Audience: Tourists, Market-enthusiasts
 
 ## Testing
 
+   - code validation
+   - Testing user stories
+   - Manual Testing
+   - future Implementations
+
 ## Bugs
 
 ## Libraries and Software
@@ -120,3 +125,36 @@ Target Audience: Tourists, Market-enthusiasts
 ## GitHub Pages
 
 ## Credits
+
+Describe in short how ive used the below stated resources
+
+### Resources
+
+ - [Django documentation](https://docs.djangoproject.com/en/5.0/)
+ - [Bootstrap Documentation](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
+ - [W3Schools](https://www.w3schools.com/)
+ -  [Summernote Documentation](https://github.com/summernote/django-summernote?tab=readme-ov-file)
+ - [Cloudinary Documentation](https://cloudinary.com/documentation)
+ - [ElephantSQL Documentation](https://www.elephantsql.com/docs/index.html)
+ - [CodeInstitute - tutor support, slack, mentoring, course content(I think therfore i blog)](https://codeinstitute.net/se/full-stack-software-development-diploma/?utm_term=code%20institute&utm_campaign=CI+-+SWE+-+Search+-+Brand&utm_source=adwords&utm_medium=ppc&hsa_acc=8983321581&hsa_cam=14660337051&hsa_grp=134087657984&hsa_ad=635849372549&hsa_src=g&hsa_tgt=kwd-319867646331&hsa_kw=code%20institute&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQiAw6yuBhDrARIsACf94RUO531QI7q6X9yAB3s7GS_rSIc2x9qXt_eLbx6DJlR3phHXgUaEboEaAs7nEALw_wcB)
+ - [OrdinaryCoders - Using django form fields and widgets](https://ordinarycoders.com/blog/article/using-django-form-fields-and-widgets)
+ - [good read on how to design a database](https://www.databasestar.com/how-to-design-a-database/)
+ - [Custom 404](https://studygyaan.com/django/django-custom-404-error-template-page)
+
+### Youtube
+ - [Codemy - django blog tutorial]
+ - [Just Soondar - Carousel tutorial](https://www.youtube.com/watch?v=vbmXKfnVkms&ab_channel=JustSoondar)
+ - [Dee Mc Django recipe sharing tutorial]
+
+
+### Sketching Tools
+ - [Balsamiq](https://balsamiq.com/?gad_source=1&gclid=Cj0KCQiAw6yuBhDrARIsACf94RWFuAI1AvoLD-OVge1dnsbZQ276DU-1lOZ9UUqGoY65dpZD1PvbQAYaAsFqEALw_wcB)
+ - [LucidChart](https://www.lucidchart.com/pages/landing?utm_source=google&utm_medium=cpc&utm_campaign=_chart_en_tier2_mixed_search_brand_exact_&km_CPC_CampaignId=1520850463&km_CPC_AdGroupID=57697288545&km_CPC_Keyword=lucid%20chart&km_CPC_MatchType=e&km_CPC_ExtensionID=&km_CPC_Network=g&km_CPC_AdPosition=&km_CPC_Creative=442433237648&km_CPC_TargetID=kwd-55720648523&km_CPC_Country=2752&km_CPC_Device=c&km_CPC_placement=&km_CPC_target=&gad_source=1&gclid=Cj0KCQiAw6yuBhDrARIsACf94RWItUjtdfLb1-MmV01hLZvhrfGIHssS2dPuAUo9ObeQCwYlvmeGp5caAsvrEALw_wcB)
+
+### Content
+ - chat gpt
+ 
+### Media
+ - [Faviocon.io - Favicon Converter](https://favicon.io/favicon-converter/)
+ - [Canva - Creating favicon](https://www.canva.com/)
+ - Images used in posts and on home page
