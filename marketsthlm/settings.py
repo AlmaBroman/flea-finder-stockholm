@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-import  dj_database_url
+import dj_database_url
 from django.contrib.messages import constants as messages
 if os.path.isfile('env.py'):
     import env
@@ -32,7 +32,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['8000-almabroman-fleafinderst-bwnhj04jl3v.ws-eu108.gitpod.io', 'flea-market-sthlm-fc73d9ace203.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = [
+    '8000-almabroman-fleafinderst-bwnhj04jl3v.ws-eu108.gitpod.io',
+    'flea-market-sthlm-fc73d9ace203.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -49,10 +51,10 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django.contrib.staticfiles',
 
-    #apps
+    # apps
     'blog',
 
-    #other
+    # other
     'crispy_forms',
     'cloudinary',
     'cloudinary_storage',
@@ -143,16 +145,20 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'NumericPasswordValidator',
     },
 ]
 
@@ -169,7 +175,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
