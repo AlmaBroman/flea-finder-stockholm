@@ -1,4 +1,4 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 {% load crispy_forms_tags %}
 {% block content %}
@@ -9,9 +9,9 @@
             <div>
                 {% if "placeholder" in post.featured_image.url %}
                 <img src="https://res-console.cloudinary.com/abroman/thumbnails/v1/image/upload/v1707304026/bWVkaWEvYmxvZy9jYXJsLXRyb25kZXJzLTFzMXdCWHdKYWxBLXVuc3BsYXNoX2M2dzRnaQ==/preview"
-                    width="100%" class="featured-image" alt="{{ post.image_alt }}">
+                    class="featured-image" alt="Placeholder image">
                 {% else %}
-                <img src=" {{ post.featured_image.url }}" width="100%" class="featured-image">
+                <img src=" {{ post.featured_image.url }}" class="featured-image" alt="{{ post.image_alt }}">
                 {% endif %}
             </div>
         </div>
