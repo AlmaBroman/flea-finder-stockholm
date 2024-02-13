@@ -37,7 +37,7 @@ class PostForm(forms.ModelForm):
         widgets = {
             'title': forms.TextInput(attrs={'placeholder': 'Write a title here'}),
             'description': SummernoteWidget(attrs={'placeholder': 'Write a description of your event here...'}),
-            'start_date': forms.DateInput(attrs={'type': 'date', 'placeholder': 'yyyy-mm-dd', 'class': 'form-control'}), 
+            'start_date': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}), 
             'start_time': forms.TimeInput(attrs={'type': 'time'}),
             'category': forms.Select(choices=choice_list),
             'end_time': forms.TimeInput(attrs={'type': 'time'}),
