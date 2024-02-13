@@ -12,7 +12,7 @@ def custom_404(request, exception):
     return render(request, '404.html', status=404)
 
 
-def index(request): 
+def index(request):
     queryset = Post.objects.all().order_by('start_date')[:5]
     context = {
         'post_list': queryset,
@@ -34,8 +34,13 @@ class PostList(generic.ListView):
 
 
 def CategoryView(request, cats):
-    category_posts = Post.objects.filter(category=cats.replace('-', ' '))
-    return render(request, 'categories.html', {'cats':cats.title().replace('-', ' '), 'category_posts':category_posts})
+    category_posts = Post.objects.filter(category=cats.replace("-", " "))
+    return render(
+        request,
+        "categories.html",
+        {"cats": cats.title().replace("-", " "),
+         "category_posts": category_posts},
+    )
 
 
 class PostDetail(View):
@@ -97,14 +102,14 @@ class PostDetail(View):
 
 class PostLike(View):
 
-    def post(self,request, slug, *args, **kwargs):
+    def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
 
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
         else:
             post.likes.add(request.user)
-        
+
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
