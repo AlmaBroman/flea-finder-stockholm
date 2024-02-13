@@ -30,7 +30,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-# DEBUG = 'DEVELOPMENT' in os.environ
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['8000-almabroman-fleafinderst-bwnhj04jl3v.ws-eu108.gitpod.io', 'flea-market-sthlm-fc73d9ace203.herokuapp.com', 'localhost']
