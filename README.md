@@ -187,7 +187,7 @@ All CSS files has passed through validation and shows no errors:
 </details>
 
 #### Python
-All Python files has passed through validation and shows no errors:
+All Python files has passed through validation:
 <details>
 <summary>admin.py</summary>
 <img src="documentation/validation/python/admin.png">
@@ -226,6 +226,7 @@ All Python files has passed through validation and shows no errors:
 <details>
 <summary>settings.py</summary>
 <img src="documentation/validation/python/settings.png">
+<p>Note: Although the validator states an error I've chosen to leave the line too long as breaking it up would make it harder to read"
 </details>
 
 <details>
