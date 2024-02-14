@@ -46,12 +46,9 @@ To adress the users need I initially made a mindmap where I wrote out potential 
 ### Colour scheme
 The main colours used for the webpage are:
 
-Navbar, footer, buttons: #212529
-Image Overlays, Text(for light bg-color): black
-Background Body, Text(for dark bg-color): white
-
-### Font
-Bootstrap default.
+- Navbar, footer, buttons: #212529
+- Image Overlays, Text(for light bg-color): black
+- Background Body, Text(for dark bg-color): white
 
 ## Project Goals
 The main goal of the site was to create a website using the Django Framework in Python along with HTML and CSS. 
@@ -129,9 +126,7 @@ like posts!
 Database model diagram
 
 <img src="documentation/design/dbm-diagram-1.jpg">
-This diagram was created using lucid chart. The post model was initialilly based for the i think therfore i blog poject and then adapted and customised to this project.
-
-flowchart?
+This diagram was created using lucid chart. The post model was based on the "i think therfore i blog" project and then adapted and customised to this project. 
 
 --- 
 ## Testing
