@@ -29,7 +29,7 @@ Registered users  are able to interact with the content by creating (updating an
   - ### [Credits](#credits-1)
 
 ## UX
-The main concept for the site is simplicity, therefore the pages have a simple structure, and general. This website is designed to follow the conventions of a typical blog site and the general functionality is designed to be intuitive, meeting the users expectations of a standard blog site.
+The main concept for the site is simplicity, therefore the pages have a simple structure, and general. This website is designed to follow the conventions of a typical blog site and the general functionality is designed to be intuitive, meeting the users expectations of a standard blog site. A simple colour scheme based on a gradient between white to dark gray was used for contrast and calm. Favicon to make the site easier to find and look good in the tab bar.
 
 ### Agile
 This project was designed using an agile approach from start to finish. I Used the Git Hub projects function to plan this project and assigned them labels according to their importance.
@@ -37,27 +37,26 @@ This project was designed using an agile approach from start to finish. I Used t
 To view the User stories in the project please click on thins [link]()
 Please note that the user stories all have a label signifying their importance and a label grouping them to a specific epic.
 
-### 5 Planes of UX
+To adress the users need I initially made a mindmap where I wrote out potential features and then prioritized and tried to keep the most important, weeding out features and information that the user will not need, at least in the first implementation of the project. This was especially considered when creating the database models and for the event detail and event view.
 
-Strategy
-Scope
-Structure
-Skeleton
-Surface
+### Colour scheme
+The main colours used for the webpage are:
 
-### Visual Design Choices
-Colour scheme
+Navbar, footer, buttons: #212529
+Image Overlays, Text(depending on background color): black
+Background Body, Text(depending on background color): white
 
-Fonts
-
-Images and icons
-
-bootstrap
+### Font
+Bootstrap default.
 
 ## Project Goals
+The main goal of the site was to create a website using the Django Framework in Python along with HTML and CSS. 
 
-Type of website: Blog/Online calendar for flea markets/markets
-Target Audience: Tourists, Market-enthusiasts
+Users should  be able to: 
+ - register an account. 
+ - Sign In/Out.
+ - Find Events they are interested in.
+ - Add their own events.
 
 ## User Stories
 
@@ -98,11 +97,13 @@ Target Audience: Tourists, Market-enthusiasts
 - home page
 - events
 - category
+  - non existing category
 - event detail
 - add event
 - register
 - sign in
 - sign out
+- 404
 
 Browse through different categories like: food, clothes, antiques, seasonal and more. 
 
@@ -122,11 +123,8 @@ flowchart?
 --- 
 ## Testing
 
-Tested browsers:
+### Tested browsers
 - Google Chrome: Everything works as expected.
-
-All manual testing and tests of user Stories was made using Google Chrome.
-
 
 lighthouse??
 
@@ -256,6 +254,7 @@ All Python files has passed through validation:
 
 ### Manual Testing
 manual testing/test user stories
+All manual testing and tests of user Stories was made using Google Chrome.
 
 ### Future Improvements
 
