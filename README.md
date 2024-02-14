@@ -4,44 +4,38 @@ Django project for Code Institute (PP4)
 ## General Information
 Flea finder Stockholm is a meeting place for people interested in markets in Stockholm. It’s a tool for vendors/event makers to share their events. And for shoppers/tourists/market conousseurs it’s a place where you can easily find a wonderful market to go to.
 
-This Django project is a flea market blog designed to help users find flea markets happening in Stockholm. Unregistered users can view the content, but not interact much with it besides from reading posts and comments and filling out a contact form. Registered users are able to interact with the content by creating, commenting and liking posts.
+Registered users  are able to interact with the content by creating (updating and deleting), commenting on and liking posts.
 
-*Link to deployed website*
+-Link to deployed website-
 
-*Screenhots*
+-Screenhots from 'am i responsive'-
 
 ## Table of Contents
 
-  - ### [General Information](#general-information)
-  - ### [Table of Contents](#table-of-contents-1)
   - ### [UX](#ux-1)
   - ### [Project Goals](#project-goals-1)
   - ### [User Stories](#user-stories-1)
-  - ### [Flowchart](#Flowchart-1)
-  - ### [General features](#general-features-1)
+  - ### [Features](#features-1)
+  - ### [Database Design](#database-design)
   - ### [Testing](#testing-1)
-    - #### [Code Validation](#code-validation-1)
+    - #### [Validator Testing](#validatior-testing-1)
     - #### [Testing User Stories](#testing-user-stories-1)
     - #### [Manual Testing](#manual-testing-1)
-    - #### [Future improvements](#Future-improvements-1)
-  - ### [Bugs](#Bugs-1)
-  - ### [Libraries and Software](#Libraries-and-Software-1)
-  - ### [Final Result](#final-result-1)
+    - #### [Future Improvements](#future-improvements-1)
+  - ### [Bugs](#bugs-1)
+  - ### [Libraries and Software](#libraries-and-software-1)
   - ### [Deployment](#deployment-1)
   - ### [Github Pages](#github-pages-1)
   - ### [Credits](#credits-1)
 
 ## UX
-The rule of threes
-User in mind
-Simple, Intuitive design
-Hierarchy of information (post list shows date Title, time location)
+The main concept for the site is simplicity, therefore the pages have a simple structure, and general. This website is designed to follow the conventions of a typical blog site and the general functionality is designed to be intuitive, meeting the users expectations of a standard blog site.
 
 ### Agile
 This project was designed using an agile approach from start to finish. I Used the Git Hub projects function to plan this project and assigned them labels according to their importance.
-Increments, Epics…?
-Acceptance criteria,
-Tasks,
+
+To view the User stories in the project please click on thins [link]()
+Please note that the user stories all have a label signifying their importance and a label grouping them to a specific epic.
 
 ### 5 Planes of UX
 
@@ -52,7 +46,6 @@ Skeleton
 Surface
 
 ### Visual Design Choices
-
 Colour scheme
 
 Fonts
@@ -60,10 +53,6 @@ Fonts
 Images and icons
 
 bootstrap
-
-FEATURES
-
-Browse through different categories like: food, clothes, antiques, seasonal and more. Add your own event and tell everyone about your amazing, upcoming market. Comment and like events you find interesting or want to know more about!
 
 ## Project Goals
 
@@ -102,9 +91,33 @@ Target Audience: Tourists, Market-enthusiasts
 |  | 25 | As a site user I can sort posts by number of likes so that i can easily find a post to read based on whats most popular | [Link](https://github.com/users/AlmaBroman/projects/3/views/1?pane=issue&itemId=52980611) |
 ---
 
-## Flowchart
+## Features
 
-## General Features
+- nav
+- footer
+- home page
+- events
+- category
+- event detail
+- add event
+- register
+- sign in
+- sign out
+
+Browse through different categories like: food, clothes, antiques, seasonal and more. 
+
+Add/update/delete your own event and tell everyone about your amazing, upcoming market. 
+
+Comment and like events you find interesting or want to know more about!
+
+Create an account that you can sign in and out to!
+
+like posts!
+
+
+## Database Design
+Database model diagrams
+flowchart?
 
 --- 
 ## Testing
@@ -118,7 +131,7 @@ All manual testing and tests of user Stories was made using Google Chrome.
 lighthouse??
 
 ---
-### Code Validation
+### Validatior Testing
 
 #### HTML
 All HTML files has passed through validation:
@@ -172,11 +185,13 @@ All HTML files has passed through validation:
 <summary>add_post.html</summary>
 <img src="">
 </details>
+Issues with add post and update post look at this!
 
 <details>
 <summary>update_post.html</summary>
 <img src="">
 </details>
+Issues with add post and update post look at this!
 
 #### CSS
 All CSS files has passed through validation and shows no errors:
@@ -239,9 +254,10 @@ All Python files has passed through validation:
 <img src="documentation/validation/python/wsgi.png">
 </details>
 
-   - Testing user stories
-   - Manual Testing
-   - future Implementations
+### Manual Testing
+manual testing/test user stories
+
+### Future Improvements
 
 ## Bugs
 
@@ -260,7 +276,7 @@ Most important packages:
 - dj3-cloudinary-storage: Integrates Cloudinary with Django Storage API.
 - django-allauth: Integrates user authentication aswell as 3rd party account authientication such as facebook and other social accounts.
 - Gunicorn: Gunicorn is a pure-Python HTTP server for WSGI applications.
-- Summernote: a java script library used for custom text editor.
+- Summernote: a java script library used to create a custom text editor.
 
 ### Frameworks and Websites used:
 - Gitpod: Used for version control and to commit and push code to github.
@@ -268,15 +284,12 @@ Most important packages:
 - Heroku: Used to deploy the project online.
 - PostgreSQL(ElephantSQL): Used as Database.
 - Cloudinary: Used to host all images on the site.
-- LucidChart: Used to create the Database Schema and the Flowchart.
+- LucidChart: Used to create the Database Schema (flowchart?).
 - Balsamiq: Used to create the Wireframes for the site.
 - Font Awesome: Used for icon implementation on the site.
 - Bootstrap: Used for responsivness and layout.
 - Canva: Used to create favicon.
 - Favicon.io : Used to convert favicon.
-
-## Final Result
-Something about the final result here maybe sample pics?
 
 ---
 ## Deployment
@@ -300,7 +313,7 @@ Create the project (Do NOT forget the dot at the end! Replace PROJ_NAME with you
 Create the app (Replace APP_NAME with your own app name):
 - Step 7: python3 manage.py startapp APP_NAME
 
-- Step 8: Add the installed app to installed apps in settings.py (In my example my project and app name are equestrian and bookings):
+- Step 8: Add the installed app to installed apps in settings.py (In my example my project and app name are 'marketsthlm' and 'blog'):
     <details>
     <summary>Installed apps example:</summary>
     <img src="documentation/deployment/installed_apps.PNG">
@@ -317,7 +330,7 @@ You will now see a yellow error screen when viewing the site:
 - Step 11: Copy the link on the screen and add it to your "Allowed Host" in your settings.py file(Here I have both my Heroku link and the local link, you should add your Heroku link here aswell when the project is deployed).
     <details>
     <summary>Allowed hosts example</summary>
-    <img src="documentation/deployment/allowed_hosts.PNG">
+    <img src="">
     </details>
 
 
@@ -340,13 +353,13 @@ Adding Config Vars
 - Step 22: Click on Settings tab, and choose "Reveal Config Vars"
     <details>
     <summary>Heroku Navbar</summary>
-    <img src="documentation/deployment/heroku_index.PNG">
+    <img src="">
     </details>
 - Step 23: As key type: DATABASE_URL
 - Step 24: As value: "The link you copied earlier from ElephantSQL".
     <details>
     <summary>Config Vars Example</summary>
-    <img src="documentation/deployment/config_vars.PNG">
+    <img src="">
     </details>
 
 Creating the env.py file to store all your sensitive information.
@@ -379,7 +392,7 @@ Find the SECRET_KEY and replace the secret key code with:
 - Step 32: SECRET_KEY = os.environ.get('SECRET_KEY')
     <details>
     <summary>Secret Key Image</summary>
-    <img src="documentation/deployment/secret_key_settings.PNG">
+    <img src="">
     </details>
 
 - Step 33: Comment out, or delete the following Database code:
@@ -523,25 +536,23 @@ Your project will now build and be ready to use. Good luck!
 
 ## Credits
 
-Describe in short how ive used the below stated resources
+Describe in short how I've used the below stated resources
 
 ### Resources
 
  - [Django documentation](https://docs.djangoproject.com/en/5.0/)
  - [Bootstrap Documentation](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
  - [W3Schools](https://www.w3schools.com/)
- -  [Summernote Documentation](https://github.com/summernote/django-summernote?tab=readme-ov-file)
+ - [Summernote Documentation](https://github.com/summernote/django-summernote?tab=readme-ov-file)
  - [Cloudinary Documentation](https://cloudinary.com/documentation)
  - [ElephantSQL Documentation](https://www.elephantsql.com/docs/index.html)
- - [CodeInstitute - tutor support, slack, mentoring, course content(I think therfore i blog)](https://codeinstitute.net/se/full-stack-software-development-diploma/?utm_term=code%20institute&utm_campaign=CI+-+SWE+-+Search+-+Brand&utm_source=adwords&utm_medium=ppc&hsa_acc=8983321581&hsa_cam=14660337051&hsa_grp=134087657984&hsa_ad=635849372549&hsa_src=g&hsa_tgt=kwd-319867646331&hsa_kw=code%20institute&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQiAw6yuBhDrARIsACf94RUO531QI7q6X9yAB3s7GS_rSIc2x9qXt_eLbx6DJlR3phHXgUaEboEaAs7nEALw_wcB)
+ - [CodeInstitute - tutor support, slack, mentoring, course content](https://codeinstitute.net/se/full-stack-software-development-diploma/?utm_term=code%20institute&utm_campaign=CI+-+SWE+-+Search+-+Brand&utm_source=adwords&utm_medium=ppc&hsa_acc=8983321581&hsa_cam=14660337051&hsa_grp=134087657984&hsa_ad=635849372549&hsa_src=g&hsa_tgt=kwd-319867646331&hsa_kw=code%20institute&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQiAw6yuBhDrARIsACf94RUO531QI7q6X9yAB3s7GS_rSIc2x9qXt_eLbx6DJlR3phHXgUaEboEaAs7nEALw_wcB)
  - [OrdinaryCoders - Using django form fields and widgets](https://ordinarycoders.com/blog/article/using-django-form-fields-and-widgets)
  - [good read on how to design a database](https://www.databasestar.com/how-to-design-a-database/)
  - [Custom 404](https://studygyaan.com/django/django-custom-404-error-template-page)
-
-### Youtube
- - [Codemy - django blog tutorial]
+ - [Codemy - Category Pages tutorial](https://www.youtube.com/watch?v=_ph8GF84fX4&ab_channel=Codemy.com)
  - [Just Soondar - Carousel tutorial](https://www.youtube.com/watch?v=vbmXKfnVkms&ab_channel=JustSoondar)
- - [Dee Mc Django recipe sharing tutorial]
+ - [Dee Mc Django - User upload to cloudinary](https://www.youtube.com/watch?v=_GNvmwvvS70&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=9&ab_channel=DeeMc)
 
 
 ### Sketching Tools
@@ -549,9 +560,11 @@ Describe in short how ive used the below stated resources
  - [LucidChart](https://www.lucidchart.com/pages/landing?utm_source=google&utm_medium=cpc&utm_campaign=_chart_en_tier2_mixed_search_brand_exact_&km_CPC_CampaignId=1520850463&km_CPC_AdGroupID=57697288545&km_CPC_Keyword=lucid%20chart&km_CPC_MatchType=e&km_CPC_ExtensionID=&km_CPC_Network=g&km_CPC_AdPosition=&km_CPC_Creative=442433237648&km_CPC_TargetID=kwd-55720648523&km_CPC_Country=2752&km_CPC_Device=c&km_CPC_placement=&km_CPC_target=&gad_source=1&gclid=Cj0KCQiAw6yuBhDrARIsACf94RWItUjtdfLb1-MmV01hLZvhrfGIHssS2dPuAUo9ObeQCwYlvmeGp5caAsvrEALw_wcB)
 
 ### Content
- - chat gpt
+ - [Chat Gpt](https://chat.openai.com/) - Note: Chat Gpt was used in this project solely for writing content/event descriptions for example posts and was not used for any coding.
  
 ### Media
- - [Faviocon.io - Favicon Converter](https://favicon.io/favicon-converter/)
+ - [Favicon.io - Favicon Converter](https://favicon.io/favicon-converter/)
  - [Canva - Creating favicon](https://www.canva.com/)
- - Images used in posts and on home page
+ - Image for Homepage - [Katherine Germain - Unsplash](https://unsplash.com/photos/red-market-sign-iIWCjgK3704)
+ - Placeholder Image - [Carl Tronders - Unsplash](https://unsplash.com/photos/a-green-wheelbarrow-with-a-sign-that-says-lops-on-it-1s1wBXwJalA)
+ - Images used in posts and on home page were sourced from [Unsplash](https://unsplash.com/), [Pixabay](https://pixabay.com/) and [Pexels](https://www.pexels.com/sv-se/)
