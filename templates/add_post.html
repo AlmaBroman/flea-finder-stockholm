@@ -15,7 +15,7 @@
             <form method="POST" class="post-form" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form.media }}
-                {{ form.as_p | safe }}
+                {{ form | crispy }}
                 <div class="d-flex justify-content-center mt-3">
                     <button type="submit" class="btn btn-dark">Submit</button>
                 </div>
