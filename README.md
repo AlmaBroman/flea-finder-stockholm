@@ -6,9 +6,10 @@ Flea finder Stockholm is a meeting place for people interested in markets in Sto
 
 Registered users  are able to interact with the content by creating (updating and deleting), commenting on and liking posts.
 
--Link to deployed website-
+#### [Link to deployed website](https://flea-market-sthlm-fc73d9ace203.herokuapp.com/)
 
--Screenhots from 'am i responsive'-
+<img src="documentation/deployed-site/am-i-responsive.png">
+
 
 ## Table of Contents
 
@@ -29,13 +30,16 @@ Registered users  are able to interact with the content by creating (updating an
   - ### [Credits](#credits-1)
 
 ## UX
-The main concept for the site is simplicity, therefore the pages have a simple structure, and general. This website is designed to follow the conventions of a typical blog site and the general functionality is designed to be intuitive, meeting the users expectations of a standard blog site. A simple colour scheme based on a gradient between white to dark gray was used for contrast and calm. Favicon to make the site easier to find and look good in the tab bar.
+The main concept for the site is simplicity, therefore the pages have a simple structure, and general. 
+
+This website is designed to follow the conventions of a typical blog site and the general functionality is designed to be intuitive, meeting the users expectations of a standard blog site. 
+
+A simple colour scheme based on a gradient between white to dark gray was used for contrast and calm. 
+
+There's a nice favicon to make the site easier to find and look good in the tab bar.
 
 ### Agile
 This project was designed using an agile approach from start to finish. I Used the Git Hub projects function to plan this project and assigned them labels according to their importance.
-
-To view the User stories in the project please click on thins [link]()
-Please note that the user stories all have a label signifying their importance and a label grouping them to a specific epic.
 
 To adress the users need I initially made a mindmap where I wrote out potential features and then prioritized and tried to keep the most important, weeding out features and information that the user will not need, at least in the first implementation of the project. This was especially considered when creating the database models and for the event detail and event view.
 
@@ -43,8 +47,8 @@ To adress the users need I initially made a mindmap where I wrote out potential 
 The main colours used for the webpage are:
 
 Navbar, footer, buttons: #212529
-Image Overlays, Text(depending on background color): black
-Background Body, Text(depending on background color): white
+Image Overlays, Text(for light bg-color): black
+Background Body, Text(for dark bg-color): white
 
 ### Font
 Bootstrap default.
@@ -57,8 +61,12 @@ Users should  be able to:
  - Sign In/Out.
  - Find Events they are interested in.
  - Add their own events.
+ - Comment and like events.
 
 ## User Stories
+
+To view the User stories in the project please click on this [link](https://github.com/users/AlmaBroman/projects/3)
+Please note that the user stories all have a label signifying their importance and a label grouping them to a specific epic.
 
 | **EPIC** | **ID #** | **User Story** | **Github project** |
 |-------------|------------|---------------------|---------------------|
@@ -97,7 +105,7 @@ Users should  be able to:
 - home page
 - events
 - category
-  - non existing category
+- non existing category
 - event detail
 - add event
 - register
@@ -117,16 +125,21 @@ like posts!
 
 
 ## Database Design
-Database model diagrams
+
+Database model diagram
+
+<img src="documentation/design/dbm-diagram-1.jpg">
+This diagram was created using lucid chart. The post model was initialilly based for the i think therfore i blog poject and then adapted and customised to this project.
+
 flowchart?
 
 --- 
 ## Testing
 
-### Tested browsers
+### Tested Browsers
 - Google Chrome: Everything works as expected.
 
-lighthouse??
+lighthouse issues!
 
 ---
 ### Validatior Testing
@@ -315,7 +328,7 @@ Create the app (Replace APP_NAME with your own app name):
 - Step 8: Add the installed app to installed apps in settings.py (In my example my project and app name are 'marketsthlm' and 'blog'):
     <details>
     <summary>Installed apps example:</summary>
-    <img src="documentation/deployment/installed_apps.PNG">
+    <img src="documentation/deployment/installed-apps.png">
     </details>
 
 Migrate the changes:
@@ -329,7 +342,7 @@ You will now see a yellow error screen when viewing the site:
 - Step 11: Copy the link on the screen and add it to your "Allowed Host" in your settings.py file(Here I have both my Heroku link and the local link, you should add your Heroku link here aswell when the project is deployed).
     <details>
     <summary>Allowed hosts example</summary>
-    <img src="">
+    <img src="documentation/deployment/allowed-hosts.png">
     </details>
 
 
@@ -350,16 +363,8 @@ Back to creating the Heroku APP.
 Adding Config Vars
 
 - Step 22: Click on Settings tab, and choose "Reveal Config Vars"
-    <details>
-    <summary>Heroku Navbar</summary>
-    <img src="">
-    </details>
 - Step 23: As key type: DATABASE_URL
 - Step 24: As value: "The link you copied earlier from ElephantSQL".
-    <details>
-    <summary>Config Vars Example</summary>
-    <img src="">
-    </details>
 
 Creating the env.py file to store all your sensitive information.
 - Step 25: Create a file named "env.py" at the root of your directory.
@@ -389,10 +394,6 @@ from pathlib import Path
 
 Find the SECRET_KEY and replace the secret key code with:
 - Step 32: SECRET_KEY = os.environ.get('SECRET_KEY')
-    <details>
-    <summary>Secret Key Image</summary>
-    <img src="">
-    </details>
 
 - Step 33: Comment out, or delete the following Database code:
 
