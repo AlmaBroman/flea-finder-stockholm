@@ -128,28 +128,162 @@ Please note that the user stories all have a label signifying their importance a
 
 ## Features
 
-- nav
-- footer
-- home page
-- events
-- category
-- non existing category
-- event detail
-- add event
-- register
-- sign in
-- sign out
-- 404
+### Nav
 
-Browse through different categories like: food, clothes, antiques, seasonal and more. 
+The nav should be easy to find and understand, located at the top of the page, containing the most essential links for the user. There's a clickable logo, when clicked it takes you to the home page. The navbar is responsive - when viewed on smaller screens is transformed to a dropdown menu. Depending on wheter youre logged in or logged out the contents of the navbar will change this applies to the registration, sign in/out and add event buttons which will appear dissapear depending on your login status. The nav is visible on all pages.
 
-Add/update/delete your own event and tell everyone about your amazing, upcoming market. 
+<details>
+<summary>Nav Unregistered User</summary>
+<img src="documentation/features/nav-unreg.png">
+</details>
 
-Comment and like events you find interesting or want to know more about!
+<details>
+<summary>Nav Registered User</summary>
+<img src="documentation/features/nav-reg.png">
+</details>
 
-Create an account that you can sign in and out to!
+<details>
+<summary>Nav Small Screen Closed</summary>
+<img src="documentation/features/nav-sm.png">
+</details>
 
-like posts!
+<details>
+<summary>Nav Small Screen Open</summary>
+<img src="documentation/features/nav-dropdown-sm.png">
+</details>
+
+### Home Page
+The Home page is the first thing the user will see. It is populated by an hero image - neon sign with the word market - chosen to give the user a strong visual hint of what the site is about. The hero image has a parallax scrolling effect for visual impact(created by reading this: W3schools Parralax Effect [link](https://www.w3schools.com/howto/howto_css_parallax.asp)). 
+
+Below the hero image is a welcome message with a short description of the website for so that the first time visitors of the site can easily understand what the website is about. And a button that when clicked takes the user to the event page.
+
+<details>
+<summary>Home Page</summary>
+<img src="documentation/features/home-1.png">
+</details>
+
+The last section of the home page is a carousel where the user can view five upcoming events. The carousel contains the most essential information about the events, and a link witch takes the user to the corresponding page of the event link they've clicked on where more info about the event is shown.
+
+<details>
+<summary>Home Page Carousel</summary>
+<img src="documentation/features/home-2.png">
+</details>
+
+### Events
+The Event page features a paginated list of all events on the blog. The user can view events in form of cards where the event image is shown, the most essential info, and what number of likes the event has gotten. If the user is interested in an event they can click anywhere on the card to be taken to said events page, however each card has got a read more button as a visual que for the user to understand that the element is clickable. 
+Another feature of the event page the filter by category dropdown menu. when clicking on this menu the user can a list with all the current categories, and the user can then click on what category to view to be redirected to a  page where only posts in chosen category is listed.
+
+<details>
+<summary>Events</summary>
+<img src="documentation/features/events-lg.png">
+</details>
+
+<details>
+<summary>Dropdown</summary>
+<img src="documentation/features/events-dropdown.png">
+</details>
+
+<details>
+<summary>Category view</summary>
+<img src="documentation/features/category-lg.png">
+</details>
+
+### Event Details
+On the Event detail page the user can view the details of a post such as date, time, location and description. If theres a map-link the location is clickable and will open a new page. I the user is logged in they are able to like posts and the heart icon is red instead of grey. If the user logged in is the author of the post edit and delete buttons are visible below the event title and can be clicked to edit / delete event.
+
+<details>
+<summary>Event Details Unregistered User</summary>
+<img src="documentation/features/pd-unreg.png">
+</details>
+
+<details>
+<summary>Event Details Author</summary>
+<img src="documentation/features/pd-auth.png">
+</details>
+
+### Update Event
+The update event page shows a form fith prepopuated fields, here the user can cahnge/update the information for their event. When they've submitted the form succesfully the user is redirected to the home page where a message is shown under the nav to inform the user that the event was updated succesfully.
+
+<details>
+<summary>Update Event</summary>
+<img src="documentation/features/update-event.png">
+</details>
+
+<details>
+<summary>Update Event Success Message</summary>
+<img src="documentation/features/update-event-success.png">
+</details>
+
+
+
+### Delete Event
+The delete event page shows two buttons. The delete button can be clicked to confirm that they wish to delete said post. The cancel button takes the user back to the home page without deleting the post. When user clicks on delete the post is deleted and the user is redirected to the home page where a message confirming the deletion af the event is shown.
+
+<details>
+<summary>Delete Event</summary>
+<img src="documentation/features/delete-event.png">
+</details>
+
+### Comments
+At the bottom of the Event detail page the user can view a list of all the comments, read the comments, view who wrote it and when. If the user is logged in the can write and submit their own comment, if not a card with register/sign up is there to guide the user if they wish to comment.
+
+<details>
+<summary>Comments Registered User</summary>
+<img src="documentation/features/comment-reg.png">
+</details>
+
+<details>
+<summary>Comments Unregistered User</summary>
+<img src="documentation/features/comment-unreg.png">
+</details>
+
+### Add Event
+The add event feature allows the user to create their own event, upload event image and details about the event. they can easily select time and date by clicking the icons in the respective fields. User can if they want to add a map-link. If the form is not filled out correctly the user will be prompted to fill out or correct corresponding form fields. When user correctly submits a post the event will be redirected to the home page where a message under the nav tells the user that the post was submitted succesfully. the post is now visible on the Event page and its corresponding category page.
+
+<details>
+<summary>Add event</summary>
+<img src="documentation/features/add-event.png">
+</details>
+
+### Account
+Users can create an account to interact with the content and create their own content on the page.
+
+On the Registration page /sign in page the user can fill out a form and click submit. When the form is incorrectly filled out the user stays on the page and it tells them how the form was not filled out correctly. If the user already has an account they can easily go to the sign up page(or the other way around if theyre on the sign in page) instead by clicking ion the sign in link below the registration form. when the formk is filled out correctly the user is taken to the home Page where a success message telling them they've logged in is shown.
+
+<details>
+<summary>Registration</summary>
+<img src="documentation/features/register.png">
+</details>
+
+<details>
+<summary>Registration Unsuccessful</summary>
+<img src="documentation/features/register-error.png">
+</details>
+
+<details>
+<summary>Sign In</summary>
+<img src="documentation/features/sign-in.png">
+</details>
+
+#### Sign Out
+On the sign out page the user can click the button to confirm that they want to sign out from their account. when confirming user is redirected to the home page and a success message can be vieved confirming the user getting successfully signed out from their account.
+
+<details>
+<summary>Sign Out</summary>
+<img src="documentation/features/sign-out.png">
+</details>
+
+
+### 404
+The 404 page informs the user about the error that has occured and features a handy button for the user to easily find their way back to the home page.
+
+<details>
+<summary>404</summary>
+<img src="documentation/features/404.png">
+</details>
+
+### Admin
+The Admin view lets the admin manage the content of their blog. Here the admin can easily manage posts, comments, likes, categorys and users.
 
 
 ## Database Design
@@ -164,8 +298,9 @@ This diagram was created using lucid chart. The post model was based on the "i t
 
 ### Tested Browsers
 - Google Chrome: Everything works as expected.
-
-lighthouse issues!
+- Mozzila Firefox: Everything works as expected.
+- Opera: Everything works as expected.
+- Safari: Everything works as expected.
 
 ---
 ### Validatior Testing
