@@ -38,6 +38,35 @@ A simple colour scheme based on a gradient between white to dark gray was used f
 
 There's a nice favicon to make the site easier to find and look good in the tab bar.
 
+### Wireframe
+The wireframe was created using balsamiq.
+
+<details>
+<summary>Nav and Home Page</summary>
+<img src="documentation/design/wireframe-nav-home.png">
+</details>
+
+<details>
+<summary>Post List and Category View</summary>
+<img src="documentation/design/wireframe-pl-cat.png">
+</details>
+
+<details>
+<summary>Post Detail</summary>
+<img src="documentation/design/wireframe-pd.png">
+</details>
+
+<details>
+<summary>Create, Update, Delete Post</summary>
+<img src="documentation/design/wireframe-post-cud.png">
+</details>
+
+<details>
+<summary>Register, Sign In / Out</summary>
+<img src="documentation/design/wireframe-account.png">
+</details>
+
+
 ### Agile
 This project was designed using an agile approach from start to finish. I Used the Git Hub projects function to plan this project and assigned them labels according to their importance.
 
@@ -54,15 +83,17 @@ The main colours used for the webpage are:
 The main goal of the site was to create a website using the Django Framework in Python along with HTML and CSS. 
 
 Users should  be able to: 
- - register an account. 
+ - Register an account. 
  - Sign In/Out.
  - Find Events they are interested in.
  - Add their own events.
+ - Update and delete their own events.
  - Comment and like events.
 
 ## User Stories
 
-To view the User stories in the project please click on this [link](https://github.com/users/AlmaBroman/projects/3)
+To view the User stories in the project please click on this [link](https://github.com/users/AlmaBroman/projects/3).
+
 Please note that the user stories all have a label signifying their importance and a label grouping them to a specific epic.
 
 | **EPIC** | **ID #** | **User Story** | **Github project** |
@@ -184,20 +215,22 @@ All HTML files has passed through validation:
 <details>
 <summary>signup.html</summary>
 <img src="documentation/validation/html/sign-up.png">
-<p>Note: The validator throws 4 errors, however after double checking the code it seems as if the html and the errors are coming from Django forms interpretation of allauths helper text.</p>
+<p>Note: The validator throws 4 errors, however after double checking the code and researching these issues it seems as if the html and the errors are coming from Django forms interpretation of allauths helper text and not the code i myself have written.</p>
 </details>
 
 <details>
 <summary>add_post.html</summary>
-<img src="">
+<img src="documentation/validation/html/validation-add-post-1.png">
+<img src="documentation/validation/html/validation-add-post-2.png">
+<p>Note: The validator throws 11 errors, however most of these errors seem to relate to the rendering of the summernote field. The two errors that are not related to summernote are coming from the rendering of the post categories as a select field rather than a charfield, which is expected from the model. I've decided leave these errors as is, since the form is functioning correctly otherwise.</p>
 </details>
-Issues with add post and update post look at this!
 
 <details>
 <summary>update_post.html</summary>
-<img src="">
+<img src="documentation/validation/html/validation-update-post-1.png">
+<img src="documentation/validation/html/validation-update-post-2.png">
+<p>Note: The validator throws 11 errors, however most of these errors seem to relate to the rendering of the summernote field. The two errors that are not related to summernote are coming from the rendering of the post categories as a select field rather than a charfield, which is expected from the model. I've decided leave these errors as is, since the form is functioning correctly otherwise.</p>
 </details>
-Issues with add post and update post look at this!
 
 #### CSS
 All CSS files has passed through validation and shows no errors:
@@ -247,7 +280,7 @@ All Python files has passed through validation:
 <details>
 <summary>settings.py</summary>
 <img src="documentation/validation/python/settings.png">
-<p>Note: Although the validator states an error I've chosen to leave the line too long as breaking it up would make it harder to read"
+<p>Note: Although the validator states an error I've chosen to leave the line too long as its only one character over the standard and breaking it up would make it harder to read.
 </details>
 
 <details>
@@ -264,9 +297,182 @@ All Python files has passed through validation:
 manual testing/test user stories
 All manual testing and tests of user Stories was made using Google Chrome.
 
+<details>
+<summary>Navigation</summary>
+
+All navigation links, including home icon, can be found in navbar or on small to medium screens in the burger drop-down menu.
+
+| Feature | Action                             | Expected Result                 |
+| :-----: | :---------------------------------:| :------------------------------:|
+| **Home Link Icon** | While not on homepage, click icon. | Icon shrinks and expands. User is redirected back to homepage. |
+| **"Home" Link** | While not on homepage, click "Home". | User is redirected back to homepage. |
+| **"Login" Link** | While not authenticated, click "Login". | User is directed to Login form. |
+| **"Sign Up" Link** | While not authenticated, click "Sign Up". | User is directed to Sign Up form. |
+| **"Add Event" Link** | While authenticated, click "Add Event". | User is directed to Add Event form. |
+| **"Logout" Link** | While authenticated, click "Logout". | User is directed to page with Sign Out button. |
+</details>
+
+<details>
+<summary>Home Page</summary>
+
+| Feature | Action                             | Expected Result                 |
+| :-----: | :---------------------------------:| :------------------------------:|
+| **"View Events" button** | On home page, click "View Events" | User is redirected to Events page. |
+| **"Carousel" next/previous** | On home page, in carousel click ">" or "<" | Next carousel slide is shown. |
+| **"Carousel read more" link** | On home page, in carousel click "read more" | Redirects user to post detail page. |
+</details>
+
+<details>
+<summary>Events</summary>
+
+| Feature | Action                             | Expected Result                 |
+| :-----: | :---------------------------------:| :------------------------------:|
+| **Events view** |  Click on event link in nav | Renders a paginated page with all of the posts in the post list. |
+| **"Filter by Category" dropdown menu** | On events page, click "filter by category" | Shows a list of all available categories. |
+| **"Category" dropdown menu link** | On events page in "filter by category" dropdown menu, click "category" | redirects user to category page |
+| **"Post Card" link** |  On events page, click anywhere on "card" | Redirects user to post detail |
+| **Pagination "next" button** |  On events page, click "next" button  | Show next page |
+| **Pagination "previous" button** |  On events page, click "next" button  | Show previous page |
+</details>
+
+<details>
+<summary>Category Page</summary>
+
+| Feature | Action                             | Expected Result                 |
+| :-----: | :---------------------------------:| :------------------------------:|
+| **Category view** |  Go to category via dropdown menu on the event page | Renders a page with all of the posts from the selected category |
+| **Non existent/empty category** | Trying to access a nonexistent category url | Renders an error message and a back button |
+| **"Post Card" link** |  On category page, click anywhere on "card" | Redirects user to post detail |
+| **"Back" button** |  On category page, click "Back" button  | Redirects user to Events page |
+</details>
+
+<details>
+<summary>Post Detail</summary>
+
+| Feature | Action                             | Expected Result                 |
+| :-----: | :---------------------------------:| :------------------------------:|
+| **View post detail** |  When clicking on a post detail link. | Page renders with all of the Post details (img, title, date, time, location(-link), event description) |
+| **No Location Link** | When clicking on a post detail link, with no location link | Page renders with location stated (not as a link)|
+| **Location Link** | In post detail view, location link, click | New tab is opened with stated link|
+| **View post detail** |  When clicking on a post detail link. | Page renders with Post detail |
+| **View comments** |  When clicking on a post detail link. | Page renders with all comments related to the respective post |
+| **Submit comment** |  When signed in, In post detail view, scroll down to comment form and blank textfield input. Write a comment. Click "Submit". | The new comment appears in the list of comments. |
+| **Like** |  In post detail view, click like button (heart icon) below post image of post that is already liked. | Icon color changes from filled to lined. Like count is decremented by 1. |
+| **Unlike** |  In post detail view, click like button (heart icon) below post image of post that isn't already liked. | Icon color changes from lined to filled. Like count is incremented by 1. |
+| **"Register" or "sign in" links** | when not signed in, in post detail view, scroll down to "register" or "sign in" to comment" links, click either | user is redirected to register, or sign in page accordingly |
+| **View "Delete" icon** | When signed in, In post detail view of post created by the user that is currently logged in | delete button is rendered below post title |
+| **View "Edit" icon** | When signed in, In post detail view of post created by the user that is currently logged in | Edit button is rendered below post title |
+| **"Edit" icon link** | Edit icon, click | Update post form renders with pre-populated form fields |
+</details>
+
+<details>
+<summary>Add Post</summary>
+
+| Feature | Action                             | Expected Result                 |
+| :-----: | :---------------------------------:| :------------------------------:|
+| **Title Field** |  Select title field and start typing. | Placeholder disappears, title shows instead. Typing is disabled after 200 characters. |
+| **Date Field** |  Select date field and start typing. | Placeholder disappears, dates shows instead. Only numbers are admitted |
+| **Date picker** |  Select date field, click calendar icon, click on date in calendar. | Placeholder disappears, selected date shows instead. |
+| **Time field** |  Select time field and start typing. | Placeholder disappears, selected time shows instead. Only numbers, only accepted time values |
+| **Time picker** |  Select time field, click clock icon, select numbers in timepicker. | Placeholder disappears, selected time shows instead. |
+| **Adress Field** |  Select adress field and start typing. | Placeholder disappears, adress shows instead. |
+| **Map Link** |  Select Map link field and start typing. | Placeholder disappears, adress link shows instead. |
+| **Image Upload** | Image(optional), click choose  | User can choose file on their computer and add upload it. |
+| **Image Description** |  Select Image description field and start typing. | Placeholder disappears, Image description shows instead. |
+| **Category Dropdown** |  category select dropdown, click | select menu list of available categorys to choose from |
+| **Select Category** |  catgory in category dropdown, click | category is shown as selected |
+| **Description Field** |  Select description field and start typing. | Placeholder disappears, description shows instead. |
+| **Submit** |  After completing post form correctly click submit button | Alert message informs user of successful submission. User is re-directed to homepage. |
+| **Incomplete Form** |  Fill out post form incorrectly, click submit button | User remains on "Create" page and is prompted to complete missing fields. |
+</details>
+
+
+<details>
+<summary>Update Post</summary>
+
+| Feature | Action                             | Expected Result                 |
+| :-----: | :---------------------------------:| :------------------------------:|
+| **Submit** |  After completing post form correctly click submit button | Alert message informs user of successful submission. User is re-directed to homepage. |
+| **Incomplete Form** |  Fill out post form incorrectly, click submit button | User remains on "Create" page and is prompted to complete missing fields. |
+</details>
+
+<details>
+<summary>Delete Post</summary>
+
+| Feature | Action                             | Expected Result                 |
+| :-----: | :---------------------------------:| :------------------------------:|
+| **"Delete" button** |  on delete page, click delete | Alert message informs user of successful deletion. User is re-directed to homepage, selected haiku has been deleted. |
+| **"Cancel" button** |  on delete page, click cancel | User is redirected to homepage, without deleting the post |
+</details>
+
+<details>
+<summary>Register</summary>
+
+| Feature | Action                             | Expected Result                 |
+| :-----: | :---------------------------------:| :------------------------------:|
+| **Registration form** |  Go to Registration page via nav link | Renders form input fields Username, Email (optional), Password, Password (confirm). |
+| **Submit** |  Fill in form fields accordingly. Click "Register". | Self-closing message informs user of successfull account creation. User is re-directed to homepage and navigation shows links for authenticated users. |
+| **Incomplete form** |  Failing to fill out all form fields, click "Register". | User remains on Register form view and is prompted to complete missing fields. |
+</details>
+
+<details>
+<summary>Sign in</summary>
+
+| Feature | Action                             | Expected Result                 |
+| :-----: | :---------------------------------:| :------------------------------:|
+| **Sign in form** |  go to sign in page via nav link | Renders form input fields, username, password |
+| **Submit** |  Fill in form fields correctly. click "sign in" | Self-closing message informs user of successfull sign in, including username. User is re-directed to homepage and navigation shows links for authenticated users. |
+| **Incomplete form** |  Failing to fill out all form fields, click "Sign In". | User remains on Sign in form view and is prompted to complete missing fields. |
+</details>
+
+<details>
+<summary>Sign Out</summary>
+
+| Feature | Action                             | Expected Result                 |
+| :-----: | :---------------------------------:| :------------------------------:|
+| **Sign out form** |  When authenticated, go to sign out page via nav link | User is redirected to logout page, asking user to confirm action |
+| **Sign Out** |  On Sign out page, click "Sign Out" | Self-closing message informs user of successfull logout. User is re-directed to homepage and navigation shows links for unauthenticated users. |
+</details>
+
+<details>
+<summary>Admin</summary>
+
+| Feature | Action                             | Passed               |
+| :-----: | :---------------------------------:| :------------------------------:|
+| **Manage Categories** |  When admin is signed in on the admin page admin is able to create update and delete any categories | Confirmed |
+| **Manage Posts** |  When admin is signed in on the admin page, admin is able to create update and delete any posts | Confirmed |
+| **Manage Comments** |  When admin is signed in on the admin page, admin is able to create update and delete any comments | Confirmed |
+| **Manage Users** | When admin is signed in on the admin page, admin is able to create update and delete any users | Confirmed |
+</details>
+
+
 ### Future Improvements
 
+ ### Lighthouse test
+
+ Due to the way Images are handled on the site the lighthouse test shows poor performance when loading the page, this has been noted and will be improved and implemented in the future.
+
+<details>
+<summary>Lighthouse test</summary>
+<img src="documentation/validation/lighthouse/lighthouse-1.png">
+</details>
+
+### Add Post, Update post html validation errors
+The add post and update post html validation showed errors, as stated in the html validation section of this document, this is noted and will be looked at and implemented in the future.
+
+### User redirections for update and add post
+When user has updated and added a post the user is redirected to the home page, for improved ux the user should however be redirected to the corresponding post detail page, this will be looked at and implemented in the future.
+
 ## Bugs
+
+### Fixed Bugs
+| Bug | Solution                             |
+| :-----: | :---------------------------------:|
+| **Failing to upload images to cloudinary** | set cloudinary vars in settings.py  |
+| **Static files not showing on deployed site** | settings.py debug false, base template - {{load static}}  |
+
+### Unsolved Bugs
+The developer has fixed all the bugs that has been found so far.
 
 ---
 ## Languages, Libraries and Software
@@ -530,8 +736,7 @@ Your project will now build and be ready to use. Good luck!
 - Press Enter. Your local clone will be created.
 
 ## Credits
-
-Describe in short how I've used the below stated resources
+The official Django Documentation was used throughout creating this project. The skeleton of this project is based on the Code Institute tutorials "Hello Django" and "I Think Therefore I Blog". For further guidance on syntax and implementation of features I also referred to Codemy, Just Soondar and Dee Mc Django tutorials. Below is a detailed list of the sources i've used and short descriptive titles for how the respective source was used.
 
 ### Resources
 
