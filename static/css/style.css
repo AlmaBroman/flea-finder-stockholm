@@ -20,6 +20,10 @@ p {
     color: grey;
 }
 
+.errorlist>li{
+    color: #ff0000;
+}
+
 /* Navbar */
 
 .navbar-brand {
